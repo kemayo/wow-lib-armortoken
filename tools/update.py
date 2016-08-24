@@ -77,6 +77,6 @@ if __name__ == '__main__':
         items_byclass = list(token['items'].items())
         items_byclass.sort()
         for cl, cl_items in items_byclass:
-            output.append("    [{}] = {},".format(cl, cl_items))
-        output.append("}},")
+            output.append("    {} = {},".format(cl, cl_items))
+        output.append("},")
     print('\n'.join(output))

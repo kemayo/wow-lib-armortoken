@@ -7,6 +7,6 @@
 ## OptionalDeps: LibStub
 ## X-License: BSD
 
-LibStub\LibStub.lua
+LibStub.lua
 
 lib.xml
