@@ -1,0 +1,12 @@
+## Interface: 70000
+## Title: Lib: ArmorToken-1.0
+## Notes: What armor tokens produce what
+## Author: Kemayo
+## Version: 1.0
+## X-Category: Library
+## OptionalDeps: LibStub
+## X-License: BSD
+
+LibStub\LibStub.lua
+
+lib.xml

@@ -1,0 +1,3 @@
+package-as: LibArmorToken-1.0
+ignore:
+    - tools
