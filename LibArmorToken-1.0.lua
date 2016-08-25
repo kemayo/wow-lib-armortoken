@@ -19,7 +19,7 @@ do
         end
         wipe(t)
         for cl in pairs(items[itemid]) do
-            t.insert(cl)
+            table.insert(t, cl)
         end
         return ipairs(t)
     end
