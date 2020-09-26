@@ -1,4 +1,4 @@
-## Interface: 70000
+## Interface: 80300
 ## Title: Lib: ArmorToken-1.0
 ## Notes: What armor tokens produce what
 ## Author: Kemayo
