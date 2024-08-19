@@ -34,10 +34,10 @@ end
 
 local armorTypes = {
     PLATE = {"PALADIN", "WARRIOR", "DEATHKNIGHT"},
-    MAIL = {"SHAMAN", "HUNTER"},
+    MAIL = {"SHAMAN", "HUNTER", "EVOKER"},
     LEATHER = {"DRUID", "DEMONHUNTER", "ROGUE", "MONK"},
     CLOTH = {"MAGE", "PRIEST", "WARLOCK"},
-    ALL = {"PALADIN", "WARRIOR", "DEATHKNIGHT", "SHAMAN", "HUNTER", "DRUID", "DEMONHUNTER", "ROGUE", "MONK", "MAGE", "PRIEST", "WARLOCK"},
+    ALL = {"PALADIN", "WARRIOR", "DEATHKNIGHT", "SHAMAN", "HUNTER", "EVOKER", "DRUID", "DEMONHUNTER", "ROGUE", "MONK", "MAGE", "PRIEST", "WARLOCK"},
 }
 local function armorTypeToken(types)
     -- call as armorTypeToken{PLATE={12345}}

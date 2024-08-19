@@ -22,6 +22,7 @@ classes = {
     512: "MONK",
     1024: "DRUID",
     2048: "DEMONHUNTER",  # speculative
+    4096: "EVOKER",  # speculative
 }
 
 
