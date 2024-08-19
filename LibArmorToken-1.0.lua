@@ -3,6 +3,22 @@ if not lib then return end
 
 local items
 
+local armorTypes = {
+    PLATE = {"PALADIN", "WARRIOR", "DEATHKNIGHT"},
+    MAIL = {"SHAMAN", "HUNTER", "EVOKER"},
+    LEATHER = {"DRUID", "DEMONHUNTER", "ROGUE", "MONK"},
+    CLOTH = {"MAGE", "PRIEST", "WARLOCK"},
+    ALL = {"PALADIN", "WARRIOR", "DEATHKNIGHT", "SHAMAN", "HUNTER", "EVOKER", "DRUID", "DEMONHUNTER", "ROGUE", "MONK", "MAGE", "PRIEST", "WARLOCK"},
+}
+local classArmorType = {}
+for armorType, classes in pairs(armorTypes) do
+    if armorType ~= "ALL" then
+        for _, class in ipairs(classes) do
+            classArmorType[class] = armorType
+        end
+    end
+end
+
 -- API
 
 function lib:ItemIsToken(itemid)
@@ -19,35 +35,35 @@ do
         end
         wipe(t)
         for cl in pairs(items[itemid]) do
-            table.insert(t, cl)
+            if classArmorType[cl] then
+                table.insert(t, cl)
+            end
         end
         return ipairs(t)
     end
 end
 
-function lib:IterateItemsForTokenAndClass(itemid, class)
-    if not (items[itemid] and items[itemid][class]) then
-        return ipairs({})
-    end
-    return ipairs(items[itemid][class])
-end
-
-local armorTypes = {
-    PLATE = {"PALADIN", "WARRIOR", "DEATHKNIGHT"},
-    MAIL = {"SHAMAN", "HUNTER", "EVOKER"},
-    LEATHER = {"DRUID", "DEMONHUNTER", "ROGUE", "MONK"},
-    CLOTH = {"MAGE", "PRIEST", "WARLOCK"},
-    ALL = {"PALADIN", "WARRIOR", "DEATHKNIGHT", "SHAMAN", "HUNTER", "EVOKER", "DRUID", "DEMONHUNTER", "ROGUE", "MONK", "MAGE", "PRIEST", "WARLOCK"},
-}
-local function armorTypeToken(types)
-    -- call as armorTypeToken{PLATE={12345}}
-    local ret = {}
-    for armorType, loot in pairs(types) do
-        for _, class in ipairs(armorTypes[armorType]) do
-            ret[class] = loot
+do
+    local t = {}
+    function lib:IterateItemsForTokenAndClass(itemid, class)
+        if not (items[itemid] and (items[itemid][class] or items[itemid][classArmorType[class]])) then
+            return ipairs({})
         end
+        wipe(t)
+        if items[itemid][class] then
+            -- class-specific
+            tAppendAll(t, items[itemid][class])
+        end
+        if items[itemid][classArmorType[class]] then
+            -- armor-type
+            tAppendAll(t, items[itemid][classArmorType[class]])
+        end
+        if items[itemid]["ALL"] then
+            -- anyone
+            tAppendAll(t, items[itemid]["ALL"])
+        end
+        return ipairs(t)
     end
-    return ret
 end
 
 -- DATA
