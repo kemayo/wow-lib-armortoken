@@ -2645,12 +2645,117 @@ items = {
     },
     --]]
     -- 7.3 Argus Unsullied
-    -- [] = { -- 
-    --     PLATE = {},
-    --     MAIL = {},
-    --     LEATHER = {},
-    --     CLOTH = {},
-    -- },
+    [152733] = { -- Unsullied Trinket
+        ALL = {153172, 152781, 152783, 152782},
+    },
+    [152734] = { -- Unsullied Cloth Mantle
+        CLOTH = {152777},
+    },
+    [152735] = { -- Unsullied Ring
+        ALL = {152779},
+    },
+    [152736] = { -- Unsullied Necklace
+        ALL = {152780},
+    },
+    [152737] = { -- Unsullied Leather Trousers
+        LEATHER = {152761},
+    },
+    [152738] = { -- Unsullied Cloth Cap
+        CLOTH = {152770},
+    },
+    [152739] = { -- Unsullied Leather Grips
+        LEATHER = {152755},
+    },
+    [152740] = { -- Unsullied Cloak
+        ALL = {152778},
+    },
+    [152741] = { -- Unsullied Mail Chestguard
+        MAIL = {152768},
+    },
+    [152742] = { -- Unsullied Cloth Cuffs
+        CLOTH = {152773},
+    },
+    [152743] = { -- Unsullied Plate Sabatons
+        PLATE = {152753},
+    },
+    [152744] = { -- Unsullied Mail Girdle
+        MAIL = {152767},
+    },
+    [152799] = { -- Unsullied Relic
+        ALL = {151002, 150998, 150997, 151001, 151004, 151000, 151003, 151015, 150996, 150999},
+    },
+    [153135] = { -- Unsullied Cloth Robes
+        CLOTH = {152775},
+    },
+    [153136] = { -- Unsullied Leather Treads
+        LEATHER = {152757},
+    },
+    [153137] = { -- Unsullied Mail Spaulders
+        MAIL = {152769},
+    },
+    [153138] = { -- Unsullied Mail Legguards
+        MAIL = {152764},
+    },
+    [153139] = { -- Unsullied Leather Headgear
+        LEATHER = {152759},
+    },
+    [153140] = { -- Unsullied Plate Waistplate
+        PLATE = {152749},
+    },
+    [153141] = { -- Unsullied Cloth Mitts
+        CLOTH = {152771},
+    },
+    [153142] = { -- Unsullied Leather Armbands
+        LEATHER = {152754},
+    },
+    [153143] = { -- Unsullied Plate Breastplate
+        PLATE = {152748},
+    },
+    [153144] = { -- Unsullied Cloth Slippers
+        CLOTH = {152774},
+    },
+    [153145] = { -- Unsullied Leather Spaulders
+        LEATHER = {152760},
+    },
+    [153146] = { -- Unsullied Plate Greaves
+        PLATE = {152746},
+    },
+    [153147] = { -- Unsullied Mail Coif
+        MAIL = {152765},
+    },
+    [153148] = { -- Unsullied Leather Belt
+        LEATHER = {152756},
+    },
+    [153149] = { -- Unsullied Mail Gloves
+        MAIL = {152763},
+    },
+    [153150] = { -- Unsullied Plate Vambraces
+        PLATE = {152752},
+    },
+    [153151] = { -- Unsullied Leather Tunic
+        LEATHER = {152758},
+    },
+    [153152] = { -- Unsullied Mail Boots
+        MAIL = {152766},
+    },
+    [153153] = { -- Unsullied Plate Pauldrons
+        PLATE = {152750},
+    },
+    [153154] = { -- Unsullied Cloth Leggings
+        CLOTH = {152776},
+    },
+    [153155] = { -- Unsullied Plate Helmet
+        PLATE = {152747},
+    },
+    [153156] = { -- Unsullied Cloth Sash
+        CLOTH = {152772},
+    },
+    [153157] = { -- Unsullied Plate Gauntlets
+        PLATE = {152751},
+    },
+    [153158] = { -- Unsullied Mail Bracers
+        MAIL = {152762},
+    },
     -- 8.2 Nazjatar Benthic
     [169479] = { -- Benthic Helm
         PLATE = {167778},
