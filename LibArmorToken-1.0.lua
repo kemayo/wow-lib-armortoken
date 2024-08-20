@@ -3038,5 +3038,7 @@ items = {
         PRIEST = {199312, 199325, 199316, 199309, 199322},
         WARLOCK = {199312, 199309, 199322},
     },
+    -- 10.1.7 Dreambound
+    -- 11.0.0 Adventurer's Warbound (Delve rewards)
 }
 -- END DATA
