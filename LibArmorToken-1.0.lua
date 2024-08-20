@@ -2817,6 +2817,7 @@ items = {
         ALL = {169009, 169002, 169007, 161374, 161418, 169008, 161375, 161382},
     },
     -- 8.3 Black Empire
+    -- Back to items > armor
     [173396] = { -- Black Empire Plate Helm
         PLATE = {173457, 173836},
     },
@@ -2912,6 +2913,130 @@ items = {
     },
     [173415] = { -- Black Empire Cloth Boots
         CLOTH = {173495, 173431, 173515, 173478},
+    },
+    -- 10.0.7 Primalist
+    [203611] = { -- Primalist Plate Helm
+        PLATE = {199433},
+    },
+    [203612] = { -- Primalist Cloth Helm
+        CLOTH = {199420},
+    },
+    [203613] = { -- Primalist Mail Helm
+        MAIL = {199444},
+    },
+    [203614] = { -- Primalist Leather Helm
+        LEATHER = {199427},
+    },
+    [203615] = { -- Primalist Plate Chestpiece
+        PLATE = {199434},
+    },
+    [203616] = { -- Primalist Cloth Chestpiece
+        CLOTH = {199417},
+    },
+    [203617] = { -- Primalist Mail Chestpiece
+        MAIL = {199441},
+    },
+    [203618] = { -- Primalist Leather Chestpiece
+        LEATHER = {199431},
+    },
+    [203619] = { -- Primalist Leather Leggings
+        LEATHER = {199428},
+    },
+    [203620] = { -- Primalist Mail Leggings
+        MAIL = {199445},
+    },
+    [203622] = { -- Primalist Cloth Leggings
+        CLOTH = {199421},
+    },
+    [203623] = { -- Primalist Plate Leggings
+        PLATE = {199437},
+    },
+    [203626] = { -- Primalist Plate Spaulders
+        PLATE = {199438},
+    },
+    [203627] = { -- Primalist Cloth Spaulders
+        CLOTH = {199424},
+    },
+    [203628] = { -- Primalist Mail Spaulders
+        MAIL = {199446},
+    },
+    [203629] = { -- Primalist Leather Spaulders
+        LEATHER = {199432},
+    },
+    [203630] = { -- Primalist Leather Bracers
+        LEATHER = {199430},
+    },
+    [203631] = { -- Primalist Mail Bracers
+        MAIL = {199448},
+    },
+    [203632] = { -- Primalist Cloth Bracers
+        CLOTH = {199423},
+    },
+    [203633] = { -- Primalist Plate Bracers
+        PLATE = {199440},
+    },
+    [203634] = { -- Primalist Plate Belt
+        PLATE = {199439},
+    },
+    [203635] = { -- Primalist Cloth Belt
+        CLOTH = {199422},
+    },
+    [203636] = { -- Primalist Mail Belt
+        MAIL = {199447},
+    },
+    [203637] = { -- Primalist Leather Belt
+        LEATHER = {199429},
+    },
+    [203638] = { -- Primalist Leather Boots
+        LEATHER = {199425},
+    },
+    [203639] = { -- Primalist Mail Boots
+        MAIL = {199442},
+    },
+    [203640] = { -- Primalist Plate Boots
+        PLATE = {199435},
+    },
+    [203641] = { -- Primalist Cloth Boots
+        CLOTH = {199418},
+    },
+    [203642] = { -- Primalist Cloth Gloves
+        CLOTH = {199419},
+    },
+    [203643] = { -- Primalist Plate Gloves
+        PLATE = {199436},
+    },
+    [203644] = { -- Primalist Mail Gloves
+        MAIL = {199443},
+    },
+    [203645] = { -- Primalist Leather Gloves
+        LEATHER = {199426},
+    },
+    [203646] = { -- Primalist Cloak
+        ALL = {199449, 199450, 199451, 199452},
+    },
+    [203647] = { -- Primalist Ring
+        ALL = {201960, 201961},
+    },
+    [203648] = { -- Primalist Necklace
+        ALL = {201962},
+    },
+    [203649] = { -- Primalist Trinket
+        ALL = {202015},
+    },
+    [203650] = { -- Primalist Weapon
+        PALADIN = {199325, 199316, 199315, 199319, 199304, 199324, 199317},
+        WARRIOR = {199315, 199320, 199304, 199324, 199317, 199318},
+        DEATHKNIGHT = {199315, 199304, 199324, 199317, 199320},
+        SHAMAN = {199325, 199316, 199309, 199319, 199305, 199306, 199318, 199323},
+        HUNTER = {199307, 199313, 199321},
+        EVOKER = {199312, 199316, 199309, 199311},
+        DRUID = {199312, 199316, 199309, 199313, 199321},
+        DEMONHUNTER = {199306, 199308},
+        ROGUE = {199310, 199306, 199318, 199323},
+        MONK = {199313, 199321, 199325, 199316, 199306, 199318, 199323},
+        MAGE = {199312, 199309, 199322},
+        PRIEST = {199312, 199325, 199316, 199309, 199322},
+        WARLOCK = {199312, 199309, 199322},
     },
 }
 -- END DATA
