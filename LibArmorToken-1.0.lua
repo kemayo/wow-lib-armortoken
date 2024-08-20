@@ -2756,6 +2756,7 @@ items = {
     [153158] = { -- Unsullied Mail Bracers
         MAIL = {152762},
     },
+    -- 8.1 Relinquished
     -- 8.2 Nazjatar Benthic
     [169479] = { -- Benthic Helm
         PLATE = {167778},
@@ -2807,6 +2808,13 @@ items = {
         MAIL = {169792, 167769, 170335, 170135, 170377},
         LEATHER = {169791, 167761, 170334, 170134, 170376},
         CLOTH = {170133, 167753, 170333, 169790, 170375},
+    },
+    -- 8.2 other
+    [169137] = { -- Extraordinary Adventurer Augmentation
+        ALL = {169002, 169007, 169009, 170273, 169008, 161414, 161374},
+    },
+    [168833] = { -- Experimental Adventurer Augmentation
+        ALL = {169009, 169002, 169007, 161374, 161418, 169008, 161375, 161382},
     },
     -- 8.3 Black Empire
     [173396] = { -- Black Empire Plate Helm
