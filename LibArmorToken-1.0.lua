@@ -2312,12 +2312,183 @@ items = {
         ALL = {103686, 103687, 103688, 103689, 103690},
     },
     -- 6.2 Tanaan Jungle Baleful
-    -- [] = { -- 
-    --     PLATE = {},
-    --     MAIL = {},
-    --     LEATHER = {},
-    --     CLOTH = {},
-    -- },
+    [128348] = { -- Baleful Spaulders
+        PLATE = {124590},
+        MAIL = {124589},
+        LEATHER = {124588},
+        CLOTH = {124587},
+    },
+    [124550] = { -- Baleful Bracers
+        PLATE = {124566},
+        MAIL = {124565},
+        LEATHER = {124564},
+        CLOTH = {124563},
+    },
+    [124551] = { -- Baleful Tunic
+        PLATE = {124569},
+        MAIL = {124568},
+        LEATHER = {124567},
+        CLOTH = {124570},
+    },
+    [124552] = { -- Baleful Treads
+        PLATE = {124574},
+        MAIL = {124573},
+        LEATHER = {124572},
+        CLOTH = {124571},
+    },
+    [124553] = { -- Baleful Gauntlets
+        PLATE = {124578},
+        MAIL = {124577},
+        LEATHER = {124576},
+        CLOTH = {124575},
+    },
+    [124554] = { -- Baleful Hood
+        PLATE = {124582},
+        MAIL = {124581},
+        LEATHER = {124580},
+        CLOTH = {124579},
+    },
+    [124555] = { -- Baleful Leggings
+        PLATE = {124586},
+        MAIL = {124585},
+        LEATHER = {124584},
+        CLOTH = {124583},
+    },
+    [124556] = { -- Baleful Spaulders
+        PLATE = {124590},
+        MAIL = {124589},
+        LEATHER = {124588},
+        CLOTH = {124587},
+    },
+    [124557] = { -- Baleful Girdle
+        PLATE = {124594},
+        MAIL = {124593},
+        LEATHER = {124592},
+        CLOTH = {124591},
+    },
+    [124558] = { -- Baleful Ring
+        ALL = {124595, 124596, 124598, 124601, 124602, 124604},
+    },
+    [124559] = { -- Baleful Choker
+        ALL = {124607, 124608, 124609, 124610, 124611, 124612},
+    },
+    [124560] = { -- Baleful Cloak
+        ALL = {124613, 124614, 124615, 124616, 124617, 124618},
+    },
+    [124561] = { -- Baleful Trinket
+        ALL = {124619, 124620, 124621, 124622, 124623},
+    },
+    [127798] = { -- Baleful Ring
+        ALL = {124595, 124596, 124598, 124601, 124602, 124604},
+    },
+    [127799] = { -- Baleful Pendant
+        ALL = {124607, 124608, 124609, 124610, 124611, 124612},
+    },
+    [127800] = { -- Baleful Cloak
+        ALL = {124613, 124614, 124615, 124616, 124617, 124618},
+    },
+    [124562] = { -- Baleful Armament
+        ALL = {124624, 124625, 124626, 124627, 124628, 124629, 124630, 124631},
+    },
+    -- the rest of the baleful items were cooperation / mission rewards
+    [127777] = { -- Baleful Cloth Bracers
+        CLOTH = {124563},
+    },
+    [127778] = { -- Baleful Cloth Robe
+        CLOTH = {124570},
+    },
+    [127779] = { -- Baleful Cloth Treads
+        CLOTH = {124571},
+    },
+    [127780] = { -- Baleful Cloth Gauntlets
+        CLOTH = {124575},
+    },
+    [127781] = { -- Baleful Cloth Hood
+        CLOTH = {124579},
+    },
+    [127782] = { -- Baleful Cloth Leggings
+        CLOTH = {124583},
+    },
+    [127783] = { -- Baleful Cloth Spaulders
+        CLOTH = {124587},
+    },
+    [127784] = { -- Baleful Cloth Girdle
+        CLOTH = {124591},
+    },
+    [127790] = { -- Baleful Leather Bracers
+        LEATHER = {124564},
+    },
+    [127791] = { -- Baleful Leather Tunic
+        LEATHER = {124567},
+    },
+    [127792] = { -- Baleful Leather Treads
+        LEATHER = {124572},
+    },
+    [127793] = { -- Baleful Leather Gauntlets
+        LEATHER = {124576},
+    },
+    [127794] = { -- Baleful Leather Hood
+        LEATHER = {124580},
+    },
+    [127795] = { -- Baleful Leather Leggings
+        LEATHER = {124584},
+    },
+    [127796] = { -- Baleful Leather Spaulders
+        LEATHER = {124588},
+    },
+    [127797] = { -- Baleful Leather Girdle
+        LEATHER = {124592},
+    },
+    [127803] = { -- Baleful Mail Bracers
+        MAIL = {124565},
+    },
+    [127804] = { -- Baleful Mail Robe
+        MAIL = {124568},
+    },
+    [127805] = { -- Baleful Mail Treads
+        MAIL = {124573},
+    },
+    [127806] = { -- Baleful Mail Gauntlets
+        -- Wowhead says it's the plate gauntlets, but...
+        MAIL = {124577},
+    },
+    [127807] = { -- Baleful Mail Hood
+        MAIL = {124581},
+    },
+    [127808] = { -- Baleful Mail Leggings
+        MAIL = {124585},
+    },
+    [127809] = { -- Baleful Mail Spaulders
+        MAIL = {124589},
+    },
+    [127810] = { -- Baleful Mail Girdle
+        MAIL = {124593},
+    },
+    [127816] = { -- Baleful Plate Bracers
+        PLATE = {124566},
+    },
+    [127817] = { -- Baleful Plate Chest
+        PLATE = {124569},
+    },
+    [127818] = { -- Baleful Plate Treads
+        PLATE = {124574},
+    },
+    [127819] = { -- Baleful Plate Gauntlets
+        -- Wowhead says it's the mail gauntlets, but...
+        PLATE = {124578},
+    },
+    [127820] = { -- Baleful Plate Hood
+        PLATE = {124582},
+    },
+    [127821] = { -- Baleful Plate Leggings
+        PLATE = {124586},
+    },
+    [127822] = { -- Baleful Plate Spaulders
+        PLATE = {124590},
+    },
+    [127823] = { -- Baleful Plate Girdle
+        PLATE = {124594},
+    },
     -- 7.2 Dauntless
     -- 7.3 Relinquished (might not be appropriate -- it's a large drop table?)
     -- 7.3 Argus Unsullied
