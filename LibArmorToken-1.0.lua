@@ -2489,7 +2489,68 @@ items = {
     [127823] = { -- Baleful Plate Girdle
         PLATE = {124594},
     },
+    -- They switch to being in "other > consumables" here
     -- 7.2 Dauntless
+    [147212] = { -- Dauntless Bracers
+        PLATE = {147228},
+        MAIL = {147227},
+        LEATHER = {147226},
+        CLOTH = {147225},
+    },
+    [147213] = { -- Dauntless Tunic
+        PLATE = {147231},
+        MAIL = {147230},
+        LEATHER = {147229},
+        CLOTH = {147232},
+    },
+    [147214] = { -- Dauntless Treads
+        PLATE = {147236},
+        MAIL = {147235},
+        LEATHER = {147234},
+        CLOTH = {147233},
+    },
+    [147215] = { -- Dauntless Gauntlets
+        PLATE = {147240},
+        MAIL = {147239},
+        LEATHER = {147238},
+        CLOTH = {147237},
+    },
+    [147216] = { -- Dauntless Hood
+        PLATE = {147244},
+        MAIL = {147243},
+        LEATHER = {147242},
+        CLOTH = {147241},
+    },
+    [147217] = { -- Dauntless Leggings
+        PLATE = {147248},
+        MAIL = {147247},
+        LEATHER = {147246},
+        CLOTH = {147245},
+    },
+    [147218] = { -- Dauntless Spaulders
+        PLATE = {147252},
+        MAIL = {147251},
+        LEATHER = {147250},
+        CLOTH = {147249},
+    },
+    [147219] = { -- Dauntless Girdle
+        PLATE = {147256},
+        MAIL = {147255},
+        LEATHER = {147254},
+        CLOTH = {147253},
+    },
+    [147220] = { -- Dauntless Ring
+        ALL = {147257},
+    },
+    [147221] = { -- Dauntless Choker
+        ALL = {147263},
+    },
+    [147222] = { -- Dauntless Cloak
+        ALL = {147269},
+    },
+    [147223] = { -- Dauntless Trinket
+        ALL = {147275, 147276, 147278},
+    },
     -- 7.3 Relinquished (might not be appropriate -- it's a large drop table?)
     -- 7.3 Argus Unsullied
     -- [] = { -- 
