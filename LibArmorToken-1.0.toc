@@ -1,4 +1,4 @@
-## Interface: 110002
+## Interface: 120001, 110207
 ## Title: Lib: ArmorToken-1.0
 ## Notes: What armor tokens produce what
 ## Author: Kemayo
