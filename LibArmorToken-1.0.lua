@@ -2981,6 +2981,111 @@ items = {
     [173415] = { -- Black Empire Cloth Boots
         CLOTH = {173495, 173431, 173515, 173478},
     },
+    -- 9.2 Sepulcher of the First Ones class set tokens:
+    -- Mystic
+    [191002] = { -- Mystic Helm Module
+        DRUID = {188847}, -- Headpiece of the Fixed Stars
+        HUNTER = {188859}, -- Godstalker's Sallet
+        MAGE = {188844}, -- Erudite Occultist's Hood
+    },
+    [191007] = { -- Mystic Shoulder Module
+        DRUID = {188851}, -- Shoulderpads of the Fixed Stars
+        HUNTER = {188856}, -- Godstalker's Pauldrons
+        MAGE = {188843}, -- Erudite Occultist's Mantle
+    },
+    [191011] = { -- Mystic Chest Module
+        DRUID = {188849}, -- Chestguard of the Fixed Stars
+        HUNTER = {188858}, -- Godstalker's Hauberk
+        MAGE = {188839}, -- Erudite Occultist's Robes
+    },
+    [191015] = { -- Mystic Hand Module
+        DRUID = {188853}, -- Handwraps of the Fixed Stars
+        HUNTER = {188861}, -- Godstalker's Gauntlets
+        MAGE = {188845}, -- Erudite Occultist's Handwraps
+    },
+    [191019] = { -- Mystic Leg Module
+        DRUID = {188848}, -- Leggings of the Fixed Stars
+        HUNTER = {188860}, -- Godstalker's Tassets
+        MAGE = {188842}, -- Erudite Occultist's Leggings
+    },
+    -- Venerated
+    [191003] = { --Venerated Helm Module
+        PALADIN = {188933}, -- Luminous Chevalier's Casque
+        PRIEST = {188880}, -- Amice of the Empyrean
+        SHAMAN = {188923}, -- Theurgic Starspeaker's Howl
+    },
+    [191008] = { --Venerated Shoulder Module
+        PALADIN = {188932}, -- Luminous Chevalier's Epaulettes
+        PRIEST = {188879}, -- Capelet of the Empyrean
+        SHAMAN = {188920}, -- Theurgic Starspeaker's Adornment
+    },
+    [191012] = { --Venerated Chest Module
+        PALADIN = {188929}, -- Luminous Chevalier's Plackart
+        PRIEST = {188875}, -- Habit of the Empyrean
+        SHAMAN = {188922}, -- Theurgic Starspeaker's Ringmail
+    },
+    [191016] = { --Venerated Hand Module
+        PALADIN = {188928}, -- Luminous Chevalier's Gauntlets
+        PRIEST = {188881}, -- Caress of the Empyrean
+        SHAMAN = {188925}, -- Theurgic Starspeaker's Runebindings
+    },
+    [191020] = { --Venerated Leg Module
+        PALADIN = {188931}, -- Luminous Chevalier's Robes
+        PRIEST = {188878}, -- Leggings of the Empyrean
+        SHAMAN = {188924}, -- Theurgic Starspeaker's Tassets
+    },
+    -- Zenith
+    [191004] = { -- Zenith Helm Module
+        MONK = {188910}, -- Crown of the Grand Upwelling
+        ROGUE = {188901}, -- Soulblade Guise
+        WARRIOR = {188942}, -- Gaze of the Infinite Infantry
+    },
+    [191009] = { -- Zenith Shoulder Module
+        MONK = {188914}, -- Tassets of the Grand Upwelling
+        ROGUE = {188905}, -- Soulblade Nightwings
+        WARRIOR = {188941}, -- Pauldrons of the Infinite Infantry
+    },
+    [191013] = { -- Zenith Chest Module
+        MONK = {188912}, -- Cuirass of the Grand Upwelling
+        ROGUE = {188903}, -- Soulblade Leathers
+        WARRIOR = {188938}, -- Breastplate of the Infinite Infantry
+    },
+    [191017] = { -- Zenith Hand Module
+        MONK = {188916}, -- Grips of the Grand Upwelling
+        ROGUE = {188907}, -- Soulblade Grasps
+        WARRIOR = {188937}, -- Grasps of the Infinite Infantry
+    },
+    [191021] = { -- Zenith Leg Module
+        MONK = {188911}, -- Legguards of the Grand Upwelling
+        ROGUE = {188902}, -- Soulblade Leggings
+        WARRIOR = {188940}, -- Legplates of the Infinite Infantry
+    },
+    -- Dreadful
+    [191005] = { -- Dreadful Helm Module
+        DEATHKNIGHT = {188868}, -- Visage of the First Eidolon
+        DEMONHUNTER = {188892}, -- Mercurial Punisher's Hood
+        WARLOCK = {188889}, -- Horns of the Demon Star
+    },
+    [191006] = { -- Dreadful Shoulder Module
+        DEATHKNIGHT = {188867}, -- Shoulderplates of the First Eidolon
+        DEMONHUNTER = {188896}, -- Mercurial Punisher's Shoulderpads
+        WARLOCK = {188888}, -- Mantle of the Demon Star
+    },
+    [191010] = { -- Dreadful Chest Module
+        DEATHKNIGHT = {188864}, -- Carapace of the First Eidolon
+        DEMONHUNTER = {188894}, -- Mercurial Punisher's Jerkin
+        WARLOCK = {188884}, -- Robes of the Demon Star
+    },
+    [191014] = { -- Dreadful Hand Module
+        DEATHKNIGHT = {188863}, -- Gauntlets of the First Eidolon
+        DEMONHUNTER = {188898}, -- Mercurial Punisher's Grips
+        WARLOCK = {188890}, -- Grasps of the Demon Star
+    },
+    [191018] = { -- Dreadful Leg Module
+        DEATHKNIGHT = {188866}, -- Chausses of the First Eidolon
+        DEMONHUNTER = {188893}, -- Mercurial Punisher's Breeches
+        WARLOCK = {188887}, -- Leggings of the Demon Star
+    },
     -- 10.0.7 Primalist
     [203611] = { -- Primalist Plate Helm
         PLATE = {199433},
