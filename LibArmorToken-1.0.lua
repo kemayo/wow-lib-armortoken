@@ -3,6 +3,8 @@ if not lib then return end
 
 local items
 
+local empty = {}
+
 local armorTypes = {
     PLATE = {"PALADIN", "WARRIOR", "DEATHKNIGHT"},
     MAIL = {"SHAMAN", "HUNTER", "EVOKER"},
@@ -67,29 +69,69 @@ do
 end
 
 do
-    local co = function(t, classOnly)
+    local function LinkBonuses(link)
+        local linkType, linkOptions, displayText = LinkUtil.ExtractLink(link)
+        local splitOptions = {LinkUtil.SplitLinkOptions(linkOptions)}
+        local numBonusIDs = tonumber(splitOptions[13])
+        if numBonusIDs and numBonusIDs > 0 then
+            local b = {}
+            for i=1, numBonusIDs, 1 do
+                table.insert(b, tonumber(splitOptions[13 + i]))
+            end
+            return unpack(b)
+        end
+    end
+    local function RelevantBonus(bonuses, ...)
+        for i=1, select("#", ...), 1 do
+            local bonus = select(i, ...)
+            if tContains(bonuses, bonus) then
+                return bonus
+            end
+        end
+    end
+    local co = function(t, classOnly, itemLinkOrId)
+        local relevantBonus
+        if t._bonuses and type(itemLinkOrId) == "string" then
+            relevantBonus = RelevantBonus(t._bonuses, LinkBonuses(itemLinkOrId))
+        end
         local playerClass = select(2, UnitClass("player"))
         for class, citems in pairs(t) do
-            if (not classOnly) or (class == classOnly) or (class == "ALL") or (class == classArmorType[classOnly]) then
+            if (class ~= "_bonuses") and ((not classOnly) or (class == classOnly) or (class == "ALL") or (class == classArmorType[classOnly])) then
                 for _, ci in ipairs(citems) do
                     -- relevant means "is specific to the player's class OR is non-class-specific and of the player's armor-type"
                     local relevant = class == playerClass or class == "ALL"
                     if not relevant and armorTypes[class] then
                         relevant = class == classArmorType[playerClass]
                     end
-                    coroutine.yield(ci, class, relevant)
+                    if t._bonuses and not relevantBonus then
+                        coroutine.yield(ci, class, relevant, unpack(t._bonuses))
+                    end
+                    coroutine.yield(ci, class, relevant, relevantBonus)
                 end
             end
         end
     end
-    -- iterates over `itemid, restriction`, `relevant`
+    -- iterates over `itemid, restriction, relevant[, bonusid1, bonusid2, ...]`
     -- `restriction` will be either CLASSNAME or ARMORTYPE
     -- `relevant` means it's either the armortype for the current player-class, or class-specific to the current player-class
-    function lib:IterateItemsForToken(itemid, classOnly)
+    -- `bonusidN` will be the different bonus-variants that this token can produce; if this was called with an itemid this
+    --    will be all possible bonuses for different variants of the token, if it was called with a link then it will only
+    --    return bonuses that the version of the token linked could create
+    function lib:IterateItemsForToken(itemLinkOrId, classOnly)
+        local itemid = C_Item.GetItemInfoInstant(itemLinkOrId)
         if not items[itemid] then
             return ipairs({})
         end
-        return coroutine.wrap(function() return co(items[itemid], classOnly) end)
+        return coroutine.wrap(function() return co(items[itemid], classOnly, itemLinkOrId) end)
+    end
+
+    function lib:GetTokenBonusVariants(itemid)
+        return unpack((items[itemid] or empty)._bonuses or empty)
+    end
+
+    -- Helper function for the above, if you get a bonus from it and need to e.g. check transmog
+    function lib:GetBareLinkForItem(itemid, bonus)
+        return (string.format("|Hitem:%d::::::::::::1:%d|h", itemid, bonus))
     end
 end
 
