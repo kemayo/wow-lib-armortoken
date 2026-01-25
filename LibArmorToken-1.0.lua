@@ -3154,6 +3154,7 @@ ITEMDATA = {
         PRIEST = {199312, 199325, 199316, 199309, 199322},
         WARLOCK = {199312, 199309, 199322},
     },
+    -- 10.0 Vault of the Incarnates: below
     -- 10.1.7 Dreambound
     -- 11.0.0 Adventurer's Warbound (Delve rewards)
 }
@@ -3272,6 +3273,126 @@ addItemsWithBonuses({9122, 9123, 9124, 9125}, {
         DEATHKNIGHT = {188866}, -- Chausses of the First Eidolon
         DEMONHUNTER = {188893}, -- Mercurial Punisher's Breeches
         WARLOCK = {188887}, -- Leggings of the Demon Star
+    },
+})
+
+-- 10.0 Vault of the Incarnates
+-- These are Topaz=Head, Lapis=Shoulder, Amethyst=Chest, Garnet=Hands, Jade=Legs
+addItemsWithBonuses({
+    -- LFR, Normal, Heroic, Mythic
+    13470, 13471, 13472, 13473
+}, {
+    [196586] = { -- Dreadful Amethyst Forgestone
+        DEATHKNIGHT = {200405}, -- Breastplate of the Haunted Frostbrood
+        DEMONHUNTER = {200342}, -- Skybound Avenger's Harness
+        WARLOCK     = {200333}, -- Scalesworn Cultist's Frock
+    },
+    [196587] = { -- Dreadful Garnet Forgestone
+        DEATHKNIGHT = {200407}, -- Grasps of the Haunted Frostbrood
+        DEMONHUNTER = {200344}, -- Skybound Avenger's Grips
+        WARLOCK = {200335}, -- Scalesworn Cultist's Gloves
+    },
+    [196588] = { -- Dreadful Jade Forgestone
+        DEATHKNIGHT = {200409}, -- Greaves of the Haunted Frostbrood
+        DEMONHUNTER = {200346}, -- Skybound Avenger's Legguards
+        WARLOCK = {200337}, -- Scalesworn Cultist's Culottes
+    },
+    [196589] = { -- Dreadful Lapis Forgestone
+        DEATHKNIGHT = {200410}, -- Jaws of the Haunted Frostbrood
+        DEMONHUNTER = {200347}, -- Skybound Avenger's Ailerons
+        WARLOCK = {200338}, -- Scalesworn Cultist's Effigy
+    },
+    [196590] = { -- Dreadful Topaz Forgestone
+        DEATHKNIGHT = {200408}, -- Maw of the Haunted Frostbrood
+        DEMONHUNTER = {200345}, -- Skybound Avenger's Visor
+        WARLOCK = {200336}, -- Scalesworn Cultist's Scorn
+    },
+
+    [196596] = { -- Mystic Amethyst Forgestone
+        DRUID = {200351}, -- Lost Landcaller's Robes
+        HUNTER = {200387}, -- Stormwing Harrier's Cuirass
+        MAGE = {200315}, -- Crystal Scholar's Tunic
+    },
+    [196597] = { -- Mystic Garnet Forgestone
+        DRUID = {200353}, -- Lost Landcaller's Claws
+        HUNTER = {200389}, -- Stormwing Harrier's Handguards
+        MAGE = {200317}, -- Crystal Scholar's Pageturners
+    },
+    [196598] = { -- Mystic Jade Forgestone
+        DRUID = {200355}, -- Lost Landcaller's Leggings
+        HUNTER = {200391}, -- Stormwing Harrier's Greaves
+        MAGE = {200319}, -- Crystal Scholar's Britches
+    },
+    [196599] = { -- Mystic Lapis Forgestone
+        DRUID = {200356}, -- Lost Landcaller's Mantle
+        HUNTER = {200392}, -- Stormwing Harrier's Pinions
+        MAGE = {200320}, -- Crystal Scholar's Beacons
+    },
+    [196600] = { -- Mystic Topaz Forgestone
+        DRUID = {200354}, -- Lost Landcaller's Antlers
+        HUNTER = {200390}, -- Stormwing Harrier's Skullmask
+        MAGE = {200318}, -- Crystal Scholar's Cowl
+    },
+})
+addItemsWithBonuses({
+    -- LFR, Normal, Heroic, Mythic
+    7982, 7979, 7980, 7981
+}, {
+    [196591] = { -- Zenith Amethyst Forgestone
+        EVOKER = {200378}, -- Hauberk of the Awakened
+        MONK = {200360}, -- Chestwrap of the Waking Fist
+        ROGUE = {200369}, -- Vault Delver's Brigandine
+        WARRIOR = {200423}, -- Husk of the Walking Mountain
+    },
+    [196592] = { -- Zenith Garnet Forgestone
+        EVOKER = {200380}, -- Gauntlets of the Awakened
+        MONK = {200362}, -- Palms of the Waking Fist
+        ROGUE = {200371}, -- Vault Delver's Lockbreakers
+        WARRIOR = {200425}, -- Gauntlets of the Walking Mountain
+    },
+    [196593] = { -- Zenith Jade Forgestone
+        EVOKER = {200382}, -- Legguards of the Awakened
+        MONK = {200364}, -- Legguards of the Waking Fist
+        ROGUE = {200373}, -- Vault Delver's Pantaloons
+        WARRIOR = {200427}, -- Poleyns of the Walking Mountain
+    },
+    [196594] = { -- Zenith Lapis Forgestone
+        EVOKER = {200383}, -- Talons of the Awakened
+        MONK = {200365}, -- Mantle of the Waking Fist
+        ROGUE = {200374}, -- Vault Delver's Epaulets
+        WARRIOR = {200428}, -- Peaks of the Walking Mountain
+    },
+    [196595] = { -- Zenith Topaz Forgestone
+        EVOKER = {200381}, -- Crown of the Awakened
+        MONK = {200363}, -- Gaze of the Waking Fist
+        ROGUE = {200372}, -- Vault Delver's Vizard
+        WARRIOR = {200426}, -- Casque of the Walking Mountain
+    },
+
+    [196601] = { -- Venerated Amethyst Forgestone
+        PALADIN = {200414}, -- Virtuous Silver Breastplate
+        PRIEST = {200324}, -- Draconic Hierophant's Vestment
+        SHAMAN = {200396}, -- Robe of Infused Earth
+    },
+    [196602] = { -- Venerated Garnet Forgestone
+        PALADIN = {200416}, -- Virtuous Silver Gauntlets
+        PRIEST = {200326}, -- Draconic Hierophant's Grips
+        SHAMAN = {200398}, -- Gauntlets of Infused Earth
+    },
+    [196603] = { -- Venerated Jade Forgestone
+        PALADIN = {200418}, -- Virtuous Silver Cuisses
+        PRIEST = {200328}, -- Draconic Hierophant's Britches
+        SHAMAN = {200400}, -- Leggings of Infused Earth
+    },
+    [196604] = { -- Venerated Lapis Forgestone
+        PALADIN = {200419}, -- Virtuous Silver Pauldrons
+        PRIEST = {200329}, -- Draconic Hierophant's Wisdom
+        SHAMAN = {200401}, -- Calderas of Infused Earth
+    },
+    [196605] = { -- Venerated Topaz Forgestone
+        PALADIN = {200417}, -- Virtuous Silver Heaume
+        PRIEST = {200327}, -- Draconic Hierophant's Archcowl
+        SHAMAN = {200399}, -- Faceguard of Infused Earth
     },
 })
 
