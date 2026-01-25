@@ -3155,6 +3155,7 @@ ITEMDATA = {
         WARLOCK = {199312, 199309, 199322},
     },
     -- 10.0 Vault of the Incarnates: below
+    -- 10.1.0 Aberrus: below
     -- 10.1.7 Dreambound
     -- 11.0.0 Adventurer's Warbound (Delve rewards)
 }
@@ -3285,7 +3286,7 @@ addItemsWithBonuses({
     [196586] = { -- Dreadful Amethyst Forgestone
         DEATHKNIGHT = {200405}, -- Breastplate of the Haunted Frostbrood
         DEMONHUNTER = {200342}, -- Skybound Avenger's Harness
-        WARLOCK     = {200333}, -- Scalesworn Cultist's Frock
+        WARLOCK = {200333}, -- Scalesworn Cultist's Frock
     },
     [196587] = { -- Dreadful Garnet Forgestone
         DEATHKNIGHT = {200407}, -- Grasps of the Haunted Frostbrood
@@ -3393,6 +3394,121 @@ addItemsWithBonuses({
         PALADIN = {200417}, -- Virtuous Silver Heaume
         PRIEST = {200327}, -- Draconic Hierophant's Archcowl
         SHAMAN = {200399}, -- Faceguard of Infused Earth
+    },
+})
+
+-- 10.1.0 Aberrus
+addItemsWithBonuses({
+    -- LFR, Normal, Heroic, Mythic
+    7982, 7979, 7980, 7981
+}, {
+    [202631] = { -- Dreadful Ventilation Fluid (Chest)
+        DEATHKNIGHT = {202464}, -- Lingering Phantom's Plackart
+        DEMONHUNTER = {202527}, -- Kinslayer's Vest
+        WARLOCK = {202536}, -- Cursed Robes of the Sinister Savant
+    },
+    [202624] = { -- Dreadful Mixing Fluid (Hands)
+        DEATHKNIGHT = {202462}, -- Lingering Phantom's Gauntlets
+        DEMONHUNTER = {202525}, -- Kinslayer's Bloodstained Grips
+        WARLOCK = {202534}, -- Grips of the Sinister Savant
+    },
+    [202627] = { -- Dreadful Melting Fluid (Helm)
+        DEATHKNIGHT = {202461}, -- Lingering Phantom's Dreadhorns
+        DEMONHUNTER = {202524}, -- Kinslayer's Hood
+        WARLOCK = {202533}, -- Grimhorns of the Sinister Savant
+    },
+    [202634] = { -- Dreadful Cooling Fluid (Legs)
+        DEATHKNIGHT = {202460}, -- Lingering Phantom's Schynbalds
+        DEMONHUNTER = {202523}, -- Kinslayer's Legguards
+        WARLOCK = {202532}, -- Leggings of the Sinister Savant
+    },
+    [202621] = { -- Dreadful Corrupting Fluid (Shoulders)
+        DEATHKNIGHT = {202459}, -- Lingering Phantom's Shoulderplates
+        DEMONHUNTER = {202522}, -- Kinslayer's Tainted Spaulders
+        WARLOCK = {202531}, -- Amice of the Sinister Savant
+    },
+
+    [202632] = { -- Mystic Ventilation Fluid (Chest)
+        DRUID = {202518}, -- Chestroots of the Autumn Blaze
+        HUNTER = {202482}, -- Ashen Predator's Sling Vest
+        MAGE = {202554}, -- Underlight Conjurer's Vestment
+    },
+    [202625] = { -- Mystic Mixing Fluid (Hands)
+        DRUID = {202516}, -- Handguards of the Autumn Blaze
+        HUNTER = {202480}, -- Ashen Predator's Skinners
+        MAGE = {202552}, -- Underlight Conjurer's Gloves
+    },
+    [202628] = { -- Mystic Melting Fluid (Helm)
+        DRUID = {202515}, -- Bough of the Autumn Blaze
+        HUNTER = {202479}, -- Ashen Predator's Faceguard
+        MAGE = {202551}, -- Underlight Conjurer's Arcanocowl
+    },
+    [202635] = { -- Mystic Cooling Fluid (Legs)
+        DRUID = {202514}, -- Pants of the Autumn Blaze
+        HUNTER = {202478}, -- Ashen Predator's Poleyns
+        MAGE = {202550}, -- Underlight Conjurer's Trousers
+    },
+    [202622] = { -- Mystic Corrupting Fluid (Shoulders)
+        DRUID = {202513}, -- Mantle of the Autumn Blaze
+        HUNTER = {202477}, -- Ashen Predator's Trophy
+        MAGE = {202549}, -- Underlight Conjurer's Aurora
+    },
+
+    [202633] = { -- Venerated Ventilation Fluid (Chest)
+        PALADIN = {202455}, -- Heartfire Sentinel's Brigandine
+        PRIEST = {202545}, -- Command of the Furnace Seraph
+        SHAMAN = {202473}, -- Adornments of the Cinderwolf
+    },
+    [202626] = { -- Venerated Mixing Fluid (Hands)
+        PALADIN = {202453}, -- Heartfire Sentinel's Protectors
+        PRIEST = {202543}, -- Grasp of the Furnace Seraph
+        SHAMAN = {202471}, -- Knuckles of the Cinderwolf
+    },
+    [202629] = { -- Venerated Melting Fluid (Helm)
+        PALADIN = {202452}, -- Heartfire Sentinel's Forgehelm
+        PRIEST = {202542}, -- Mask of the Furnace Seraph
+        SHAMAN = {202470}, -- Spangenhelm of the Cinderwolf
+    },
+    [202636] = { -- Venerated Cooling Fluid (Legs)
+        PALADIN = {202451}, -- Heartfire Sentinel's Faulds
+        PRIEST = {202541}, -- Breeches of the Furnace Seraph
+        SHAMAN = {202469}, -- Braies of the Cinderwolf
+    },
+    [202623] = { -- Venerated Corrupting Fluid (Shoulders)
+        PALADIN = {202450}, -- Heartfire Sentinel's Steelwings
+        PRIEST = {202540}, -- Devotion of the Furnace Seraph
+        SHAMAN = {202468}, -- Thunderpads of the Cinderwolf
+    },
+
+    [202639] = { -- Zenith Ventilation Fluid (Chest)
+        EVOKER = {202491}, -- Hauberk of Obsidian Secrets
+        MONK = {202509}, -- Cuirass of the Vermillion Forge
+        ROGUE = {202500}, -- Lurking Specter's Brigandine
+        WARRIOR = {202446}, -- Battlechest of the Onyx Crucible
+    },
+    [202638] = { -- Zenith Mixing Fluid (Hands)
+        EVOKER = {202489}, -- Claws of Obsidian Secrets
+        MONK = {202507}, -- Fists of the Vermillion Forge
+        ROGUE = {202498}, -- Lurking Specter's Handgrips
+        WARRIOR = {202444}, -- Handguards of the Onyx Crucible
+    },
+    [202630] = { -- Zenith Melting Fluid (Helm)
+        EVOKER = {202488}, -- Crown of Obsidian Secrets
+        MONK = {202506}, -- Cover of the Vermillion Forge
+        ROGUE = {202497}, -- Lurking Specter's Visage
+        WARRIOR = {202443}, -- Thraexhelm of the Onyx Crucible
+    },
+    [202640] = { -- Zenith Cooling Fluid (Legs)
+        EVOKER = {202487}, -- Chausses of Obsidian Secrets
+        MONK = {202505}, -- Pantaloons of the Vermillion Forge
+        ROGUE = {202496}, -- Lurking Specter's Tights
+        WARRIOR = {202442}, -- Legplates of the Onyx Crucible
+    },
+    [202637] = { -- Zenith Corrupting Fluid (Shoulders)
+        EVOKER = {202486}, -- Wingspan of Obsidian Secrets
+        MONK = {202504}, -- Spines of the Vermillion Forge
+        ROGUE = {202495}, -- Lurking Specter's Shoulderblades
+        WARRIOR = {202441}, -- Pauldrons of the Onyx Crucible
     },
 })
 
