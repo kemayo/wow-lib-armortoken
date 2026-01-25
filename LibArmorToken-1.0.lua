@@ -69,44 +69,76 @@ do
 end
 
 do
-    local function LinkBonuses(link)
+    -- this mapping came from Blizzard_Reports.lua
+    local fields = {
+       "itemID", "enchantID", "gemID1", "gemID2", "gemID3",
+       "gemID4", "suffixID", "uniqueID", "linkLevel", "specializationID",
+       "upgradeTypeID", "instanceDifficultyID", "numBonusIDs", -- [:bonusID1:bonusID2:...]
+       --[:upgradeValue1:upgradeValue2:...]:relic1NumBonusIDs[:relic1BonusID1:relic1BonusID2:...]:relic2NumBonusIDs[:relic2BonusID1:relic2BonusID2:...]:relic3NumBonusIDs[:relic3BonusID1:relic3BonusID2:...]
+    }
+    local function LinkOptions(link)
         local linkType, linkOptions, displayText = LinkUtil.ExtractLink(link)
         local splitOptions = {LinkUtil.SplitLinkOptions(linkOptions)}
-        local numBonusIDs = tonumber(splitOptions[13])
+        local options = {}
+        for i, field in ipairs(fields) do
+            options[field] = tonumber(splitOptions[i])
+        end
+        local numBonusIDs = tonumber(options.numBonusIDs)
         if numBonusIDs and numBonusIDs > 0 then
             local b = {}
             for i=1, numBonusIDs, 1 do
-                table.insert(b, tonumber(splitOptions[13 + i]))
+                local bonusID = tonumber(splitOptions[#fields + i])
+                table.insert(b, bonusID)
+                options["bonusID"..i] = bonusID
             end
-            return unpack(b)
+            options.bonusIDs = b
         end
+        --TODO: support the rest of the fields if they ever become relevant
+        return options, linkType, displayText
     end
-    local function RelevantBonus(bonuses, ...)
-        for i=1, select("#", ...), 1 do
-            local bonus = select(i, ...)
-            if tContains(bonuses, bonus) then
-                return bonus
+    local function IsVariantRelevant(linkOptions, variant)
+        -- variant is a linkoptions table
+        for field, value in pairs(variant) do
+            if field == "bonusIDs" then
+                for _, bonusID in ipairs(value) do
+                    if not tContains(linkOptions.bonusIDs, bonusID) then
+                        return false
+                    end
+                end
+            else
+                if linkOptions[field] ~= value then
+                    return false
+                end
             end
         end
+        return true
+    end
+    local function RelevantVariants(itemLinkOrId, variants)
+        if not (variants and type(itemLinkOrId) == "string") then return end
+        local linkOptions = LinkOptions(itemLinkOrId)
+        local relevant = {}
+        for _, variant in ipairs(variants) do
+            if IsVariantRelevant(linkOptions, variant) then
+                table.insert(relevant, variant)
+            end
+        end
+        return #relevant > 0 and relevant or nil
     end
     local co = function(t, classOnly, itemLinkOrId)
-        local relevantBonus
-        if t._bonuses and type(itemLinkOrId) == "string" then
-            relevantBonus = RelevantBonus(t._bonuses, LinkBonuses(itemLinkOrId))
-        end
+        local relevantVariants = RelevantVariants(itemLinkOrId, t._variants)
         local playerClass = select(2, UnitClass("player"))
         for class, citems in pairs(t) do
-            if (class ~= "_bonuses") and ((not classOnly) or (class == classOnly) or (class == "ALL") or (class == classArmorType[classOnly])) then
+            if (class ~= "_variants") and ((not classOnly) or (class == classOnly) or (class == "ALL") or (class == classArmorType[classOnly])) then
                 for _, ci in ipairs(citems) do
                     -- relevant means "is specific to the player's class OR is non-class-specific and of the player's armor-type"
                     local relevant = class == playerClass or class == "ALL"
                     if not relevant and armorTypes[class] then
                         relevant = class == classArmorType[playerClass]
                     end
-                    if t._bonuses and not relevantBonus then
-                        coroutine.yield(ci, class, relevant, {unpack(t._bonuses)})
+                    if t._variants and not relevantVariants then
+                        coroutine.yield(ci, class, relevant, {unpack(t._variants)})
                     else
-                        coroutine.yield(ci, class, relevant, relevantBonus)
+                        coroutine.yield(ci, class, relevant, relevantVariants)
                     end
                 end
             end
@@ -125,13 +157,23 @@ do
         return coroutine.wrap(function() return co(ITEMDATA[itemid], classOnly, itemLinkOrId) end)
     end
 
-    function lib:GetTokenBonusVariants(itemid)
-        return unpack((ITEMDATA[itemid] or empty)._bonuses or empty)
+    function lib:GetTokenVariants(itemid)
+        return unpack((ITEMDATA[itemid] or empty)._variants or empty)
     end
 
-    -- Helper function for the above, if you get a bonus from it and need to e.g. check transmog
-    function lib:GetBareLinkForItem(itemid, bonus)
-        return (string.format("|Hitem:%d::::::::::::1:%d|h", itemid, bonus))
+    -- Helper function for the above, if you get a variant from it and need to e.g. check transmog
+    function lib:GetBareLinkForItem(itemid, variant)
+        if not variant then return (string.format("|Hitem:%d|h[%d]|h", itemid, itemid)) end
+        local linkFields = {itemID=itemid, numBonusIDs=variant.numBonusIDs or (variant.bonusIDs and #variant.bonusIDs or 0)}
+        MergeTable(linkFields, variant)
+        local link = {}
+        for i, field in ipairs(fields) do
+            table.insert(link, linkFields[field] or "")
+        end
+        if variant.bonusIDs then
+            tAppendAll(link, variant.bonusIDs)
+        end
+        return (string.format("|Hitem:%s|h[%d]|h", table.concat(link, ":"), itemid))
     end
 end
 
@@ -3160,12 +3202,19 @@ ITEMDATA = {
     -- 11.0.0 Adventurer's Warbound (Delve rewards)
 }
 
--- Common case is everything from a given set having a shared set of bonuses that represent the difficulty variants
-local function addItemsWithBonuses(bonuses, items)
+-- Common case is everything from a given set having a shared set of link modifiers that represent the difficulty variants
+-- See https://warcraft.wiki.gg/wiki/ItemLink for values:
+local function addItemsWithVariants(variants, items)
     for tokenid, tokenitems in pairs(items) do
-        tokenitems._bonuses = bonuses
+        tokenitems._variants = variants
         ITEMDATA[tokenid] = tokenitems
     end
+end
+local function addItemsWithBonuses(bonuses, items)
+    for i, bonusID in ipairs(bonuses) do
+        bonuses[i] = {bonusIDs={bonuses[i]}}
+    end
+    return addItemsWithVariants(bonuses, items)
 end
 
 -- 9.2 Sepulcher of the First Ones class set tokens:
