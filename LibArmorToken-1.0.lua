@@ -3283,6 +3283,7 @@ addItemsWithBonuses({
     -- LFR, Normal, Heroic, Mythic
     13470, 13471, 13472, 13473
 }, {
+    -- Dreadful (Death Knight, Demon Hunter, Warlock)
     [196586] = { -- Dreadful Amethyst Forgestone
         DEATHKNIGHT = {200405}, -- Breastplate of the Haunted Frostbrood
         DEMONHUNTER = {200342}, -- Skybound Avenger's Harness
@@ -3308,7 +3309,7 @@ addItemsWithBonuses({
         DEMONHUNTER = {200345}, -- Skybound Avenger's Visor
         WARLOCK = {200336}, -- Scalesworn Cultist's Scorn
     },
-
+    -- Mystic (Druid, Hunter, Mage)
     [196596] = { -- Mystic Amethyst Forgestone
         DRUID = {200351}, -- Lost Landcaller's Robes
         HUNTER = {200387}, -- Stormwing Harrier's Cuirass
@@ -3339,6 +3340,7 @@ addItemsWithBonuses({
     -- LFR, Normal, Heroic, Mythic
     7982, 7979, 7980, 7981
 }, {
+    -- Zenith (Evoker, Monk, Rogue, Warrior)
     [196591] = { -- Zenith Amethyst Forgestone
         EVOKER = {200378}, -- Hauberk of the Awakened
         MONK = {200360}, -- Chestwrap of the Waking Fist
@@ -3369,7 +3371,7 @@ addItemsWithBonuses({
         ROGUE = {200372}, -- Vault Delver's Vizard
         WARRIOR = {200426}, -- Casque of the Walking Mountain
     },
-
+    -- Venerated (Paladin, Priest, Shaman)
     [196601] = { -- Venerated Amethyst Forgestone
         PALADIN = {200414}, -- Virtuous Silver Breastplate
         PRIEST = {200324}, -- Draconic Hierophant's Vestment
@@ -3402,6 +3404,7 @@ addItemsWithBonuses({
     -- LFR, Normal, Heroic, Mythic
     7982, 7979, 7980, 7981
 }, {
+    -- Dreadful (Death Knight, Demon Hunter, Warlock)
     [202631] = { -- Dreadful Ventilation Fluid (Chest)
         DEATHKNIGHT = {202464}, -- Lingering Phantom's Plackart
         DEMONHUNTER = {202527}, -- Kinslayer's Vest
@@ -3427,7 +3430,7 @@ addItemsWithBonuses({
         DEMONHUNTER = {202522}, -- Kinslayer's Tainted Spaulders
         WARLOCK = {202531}, -- Amice of the Sinister Savant
     },
-
+    -- Mystic (Druid, Hunter, Mage)
     [202632] = { -- Mystic Ventilation Fluid (Chest)
         DRUID = {202518}, -- Chestroots of the Autumn Blaze
         HUNTER = {202482}, -- Ashen Predator's Sling Vest
@@ -3453,7 +3456,7 @@ addItemsWithBonuses({
         HUNTER = {202477}, -- Ashen Predator's Trophy
         MAGE = {202549}, -- Underlight Conjurer's Aurora
     },
-
+    -- Venerated (Paladin, Priest, Shaman)
     [202633] = { -- Venerated Ventilation Fluid (Chest)
         PALADIN = {202455}, -- Heartfire Sentinel's Brigandine
         PRIEST = {202545}, -- Command of the Furnace Seraph
@@ -3479,7 +3482,7 @@ addItemsWithBonuses({
         PRIEST = {202540}, -- Devotion of the Furnace Seraph
         SHAMAN = {202468}, -- Thunderpads of the Cinderwolf
     },
-
+    -- Zenith (Evoker, Monk, Rogue, Warrior)
     [202639] = { -- Zenith Ventilation Fluid (Chest)
         EVOKER = {202491}, -- Hauberk of Obsidian Secrets
         MONK = {202509}, -- Cuirass of the Vermillion Forge
@@ -3509,6 +3512,122 @@ addItemsWithBonuses({
         MONK = {202504}, -- Spines of the Vermillion Forge
         ROGUE = {202495}, -- Lurking Specter's Shoulderblades
         WARRIOR = {202441}, -- Pauldrons of the Onyx Crucible
+    },
+})
+
+-- 10.2.0 Amirdrassil
+addItemsWithBonuses({
+    -- LFR, Normal, Heroic, Mythic
+    7982, 7979, 7980, 7981
+}, {
+    -- Dreadful (Death Knight, Demon Hunter, Warlock)
+    [207462] = { -- Dreadful Verdurous Dreamheart (Chest)
+        DEATHKNIGHT = {207203}, -- Casket of the Risen Nightmare
+        DEMONHUNTER = {207266}, -- Screaming Torchfiend's Binding
+        WARLOCK = {207275}, -- Devout Ashdevil's Razorhide
+    },
+    [207466] = { -- Dreadful Tormented Dreamheart (Hands)
+        DEATHKNIGHT = {207201}, -- Thorns of the Risen Nightmare
+        DEMONHUNTER = {207264}, -- Screaming Torchfiend's Grasp
+        WARLOCK = {207273}, -- Devout Ashdevil's Claws
+    },
+    [207470] = { -- Dreadful Blazing Dreamheart (Helm)
+        DEATHKNIGHT = {207200}, -- Piercing Gaze of the Risen Nightmare
+        DEMONHUNTER = {207263}, -- Screaming Torchfiend's Burning Scowl
+        WARLOCK = {207272}, -- Devout Ashdevil's Grimhorns
+    },
+    [207474] = { -- Dreadful Ashen Dreamheart (Legs)
+        DEATHKNIGHT = {207199}, -- Greaves of the Risen Nightmare
+        DEMONHUNTER = {207262}, -- Screaming Torchfiend's Blazewraps
+        WARLOCK = {207271}, -- Devout Ashdevil's Tights
+    },
+    [207478] = { -- Dreadful Smoldering Dreamheart (Shoulders)
+        DEATHKNIGHT = {207198}, -- Skewers of the Risen Nightmare
+        DEMONHUNTER = {207261}, -- Screaming Torchfiend's Horned Memento
+        WARLOCK = {207270}, -- Devout Ashdevil's Hatespikes
+    },
+    -- Mystic (Druid, Hunter, Mage)
+    [207463] = { -- Mystic Verdurous Dreamheart (Chest)
+        DRUID = {207257}, -- Benevolent Embersage's Robe
+        HUNTER = {207221}, -- Blazing Dreamstalker's Scaled Hauberk
+        MAGE = {207293}, -- Wayward Chronomancer's Patchwork
+    },
+    [207467] = { -- Mystic Tormented Dreamheart (Hands)
+        DRUID = {207255}, -- Benevolent Embersage's Talons
+        HUNTER = {207219}, -- Blazing Dreamstalker's Skinners
+        MAGE = {207291}, -- Wayward Chronomancer's Gloves
+    },
+    [207471] = { -- Mystic Blazing Dreamheart (Helm)
+        DRUID = {207254}, -- Benevolent Embersage's Casque
+        HUNTER = {207218}, -- Blazing Dreamstalker's Flamewaker Horns
+        MAGE = {207290}, -- Wayward Chronomancer's Chronocap
+    },
+    [207475] = { -- Mystic Ashen Dreamheart (Legs)
+        DRUID = {207253}, -- Benevolent Embersage's Leggings
+        HUNTER = {207217}, -- Blazing Dreamstalker's Shellgreaves
+        MAGE = {207289}, -- Wayward Chronomancer's Pantaloons
+    },
+    [207479] = { -- Mystic Smoldering Dreamheart (Shoulders)
+        DRUID = {207252}, -- Benevolent Embersage's Wisdom
+        HUNTER = {207216}, -- Blazing Dreamstalker's Finest Hunt
+        MAGE = {207288}, -- Wayward Chronomancer's Metronomes
+    },
+    -- Venerated (Paladin, Priest, Shaman)
+    [207464] = { -- Venerated Verdurous Dreamheart (Chest)
+        PALADIN = {207194}, -- Zealous Pyreknight's Warplate
+        PRIEST = {207284}, -- Cassock of Lunar Communion
+        SHAMAN = {207212}, -- Greatwolf Outcast's Harness
+    },
+    [207468] = { -- Venerated Tormented Dreamheart (Hands)
+        PALADIN = {207192}, -- Zealous Pyreknight's Jeweled Gauntlets
+        PRIEST = {207282}, -- Touch of Lunar Communion
+        SHAMAN = {207210}, -- Greatwolf Outcast's Grips
+    },
+    [207472] = { -- Venerated Blazing Dreamheart (Helm)
+        PALADIN = {207191}, -- Zealous Pyreknight's Barbute
+        PRIEST = {207281}, -- Crest of Lunar Communion
+        SHAMAN = {207209}, -- Greatwolf Outcast's Jaws
+    },
+    [207476] = { -- Venerated Ashen Dreamheart (Legs)
+        PALADIN = {207190}, -- Zealous Pyreknight's Cuisses
+        PRIEST = {207280}, -- Leggings of Lunar Communion
+        SHAMAN = {207208}, -- Greatwolf Outcast's Fur-Lined Kilt
+    },
+    [207480] = { -- Venerated Smoldering Dreamheart (Shoulders)
+        PALADIN = {207189}, -- Zealous Pyreknight's Ailettes
+        PRIEST = {207279}, -- Shoulderguardians of Lunar Communion
+        SHAMAN = {207207}, -- Greatwolf Outcast's Companions
+    },
+    -- Zenith (Evoker, Monk, Rogue, Warrior)
+    [207465] = { -- Zenith Verdurous Dreamheart (Chest)
+        EVOKER = {207230}, -- Weyrnkeeper's Timeless Raiment
+        MONK = {207248}, -- Mystic Heron's Burdens
+        ROGUE = {207239}, -- Lucid Shadewalker's Cuirass
+        WARRIOR = {207185}, -- Molten Vanguard's Plackart
+    },
+    [207469] = { -- Zenith Tormented Dreamheart (Hands)
+        EVOKER = {207228}, -- Weyrnkeeper's Timeless Clawguards
+        MONK = {207246}, -- Mystic Heron's Glovebills
+        ROGUE = {207237}, -- Lucid Shadewalker's Clawgrips
+        WARRIOR = {207183}, -- Molten Vanguard's Crushers
+    },
+    [207473] = { -- Zenith Blazing Dreamheart (Helm)
+        EVOKER = {207227}, -- Weyrnkeeper's Timeless Dracoif
+        MONK = {207245}, -- Mystic Heron's Hatsuburi
+        ROGUE = {207236}, -- Lucid Shadewalker's Deathmask
+        WARRIOR = {207182}, -- Molten Vanguard's Domeplate
+    },
+    [207477] = { -- Zenith Ashen Dreamheart (Legs)
+        EVOKER = {207226}, -- Weyrnkeeper's Timeless Breeches
+        MONK = {207244}, -- Mystic Heron's Waders
+        ROGUE = {207235}, -- Lucid Shadewalker's Chausses
+        WARRIOR = {207181}, -- Molten Vanguard's Steel Tassets
+    },
+    [207481] = { -- Zenith Smoldering Dreamheart (Shoulders)
+        EVOKER = {207225}, -- Weyrnkeeper's Timeless Sandbrace
+        MONK = {207243}, -- Mystic Heron's Hopeful Effigy
+        ROGUE = {207234}, -- Lucid Shadewalker's Bladed Spaulders
+        WARRIOR = {207180}, -- Molten Vanguard's Shouldervents
     },
 })
 
