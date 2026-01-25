@@ -104,19 +104,19 @@ do
                         relevant = class == classArmorType[playerClass]
                     end
                     if t._bonuses and not relevantBonus then
-                        coroutine.yield(ci, class, relevant, unpack(t._bonuses))
+                        coroutine.yield(ci, class, relevant, {unpack(t._bonuses)})
+                    else
+                        coroutine.yield(ci, class, relevant, relevantBonus)
                     end
-                    coroutine.yield(ci, class, relevant, relevantBonus)
                 end
             end
         end
     end
-    -- iterates over `itemid, restriction, relevant[, bonusid1, bonusid2, ...]`
+    -- iterates over `itemid, restriction, relevant[, bonusid OR bonusids]`
     -- `restriction` will be either CLASSNAME or ARMORTYPE
     -- `relevant` means it's either the armortype for the current player-class, or class-specific to the current player-class
-    -- `bonusidN` will be the different bonus-variants that this token can produce; if this was called with an itemid this
-    --    will be all possible bonuses for different variants of the token, if it was called with a link then it will only
-    --    return bonuses that the version of the token linked could create
+    -- `bonusid` will be the link-specific bonus, if this was called with a link that maps to a relevant bonus
+    -- `bonusids` will be a table of all possible bonuses otherwise
     function lib:IterateItemsForToken(itemLinkOrId, classOnly)
         local itemid = C_Item.GetItemInfoInstant(itemLinkOrId)
         if not ITEMDATA[itemid] then
