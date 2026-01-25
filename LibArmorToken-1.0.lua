@@ -3199,6 +3199,7 @@ ITEMDATA = {
     -- 10.0 Vault of the Incarnates: below
     -- 10.1.0 Aberrus: below
     -- 10.1.7 Dreambound
+    -- 10.2.0 Amirdrassil: below
     -- 11.0.0 Adventurer's Warbound (Delve rewards)
 }
 
@@ -3677,6 +3678,127 @@ addItemsWithBonuses({
         MONK = {207243}, -- Mystic Heron's Hopeful Effigy
         ROGUE = {207234}, -- Lucid Shadewalker's Bladed Spaulders
         WARRIOR = {207180}, -- Molten Vanguard's Shouldervents
+    },
+})
+
+-- 11.0.0 Nerub-ar Palace
+addItemsWithVariants({
+    {instanceDifficultyID=Enum.ItemCreationContext.RaidFinder, bonusIDs={3524}},
+    {instanceDifficultyID=Enum.ItemCreationContext.RaidNormal, bonusIDs={3524}},
+    {instanceDifficultyID=Enum.ItemCreationContext.RaidHeroic, bonusIDs={3524}},
+    {instanceDifficultyID=Enum.ItemCreationContext.RaidMythic, bonusIDs={3524}},
+}, {
+    -- Dreadful (Death Knight, Demon Hunter, Warlock)
+    [225614] = { -- Dreadful Blasphemer's Effigy (Chest)
+        DEATHKNIGHT = {212005}, -- Exhumed Centurion's Breastplate
+        DEMONHUNTER = {212068}, -- Chestguard of the Hypogeal Nemesis
+        WARLOCK = {212077}, -- Hexflame Coven's Ritual Harness
+    },
+    [225618] = { -- Dreadful Stalwart's Emblem (Hands)
+        DEATHKNIGHT = {212003}, -- Exhumed Centurion's Gauntlets
+        DEMONHUNTER = {212066}, -- Claws of the Hypogeal Nemesis
+        WARLOCK = {212075}, -- Hexflame Coven's Sleeves
+    },
+    [225622] = { -- Dreadful Conniver's Badge (Helm)
+        DEATHKNIGHT = {212002}, -- Exhumed Centurion's Galea
+        DEMONHUNTER = {212065}, -- Impalers of the Hypogeal Nemesis
+        WARLOCK = {212074}, -- Hexflame Coven's All-Seeing Eye
+    },
+    [225626] = { -- Dreadful Slayer's Icon (Legs)
+        DEATHKNIGHT = {212001}, -- Exhumed Centurion's Chausses
+        DEMONHUNTER = {212064}, -- Pantaloons of the Hypogeal Nemesis
+        WARLOCK = {212073}, -- Hexflame Coven's Leggings
+    },
+    [225630] = { -- Dreadful Obscenity's Idol (Shoulders)
+        DEATHKNIGHT = {212000}, -- Exhumed Centurion's Spikes
+        DEMONHUNTER = {212063}, -- War-Mantle of the Hypogeal Nemesis
+        WARLOCK = {212072}, -- Hexflame Coven's Altar
+    },
+
+    -- Mystic (Druid, Hunter, Mage)
+    [225615] = { -- Mystic Blasphemer's Effigy (Chest)
+        DRUID = {212059}, -- Hide of the Greatlynx
+        HUNTER = {212023}, -- Lightless Scavenger's Tunic
+        MAGE = {212094}, -- Slippers of Violet Rebirth
+    },
+    [225619] = { -- Mystic Stalwart's Emblem (Hands)
+        DRUID = {212057}, -- Eviscerators of the Greatlynx
+        HUNTER = {212021}, -- Lightless Scavenger's Mitts
+        MAGE = {212093}, -- Jeweled Gauntlets of Violet Rebirth
+    },
+    [225623] = { -- Mystic Conniver's Badge (Helm)
+        DRUID = {212056}, -- Mask of the Greatlynx
+        HUNTER = {212020}, -- Lightless Scavenger's Skull
+        MAGE = {212092}, -- Hood of Violet Rebirth
+    },
+    [225627] = { -- Mystic Slayer's Icon (Legs)
+        DRUID = {212055}, -- Leggings of the Greatlynx
+        HUNTER = {212019}, -- Lightless Scavenger's Stalkings
+        MAGE = {212091}, -- Coattails of Violet Rebirth
+    },
+    [225631] = { -- Mystic Obscenity's Idol (Shoulders)
+        DRUID = {212054}, -- Maw of the Greatlynx
+        HUNTER = {212018}, -- Lightless Scavenger's Taxidermy
+        MAGE = {212090}, -- Beacons of Violet Rebirth
+    },
+
+    -- Venerated (Paladin, Priest, Shaman)
+    [225616] = { -- Venerated Blasphemer's Effigy (Chest)
+        PALADIN = {211996}, -- Entombed Seraph's Breastplate
+        PRIEST = {212086}, -- Living Luster's Raiment
+        SHAMAN = {212014}, -- Vestments of the Forgotten Reservoir
+    },
+    [225620] = { -- Venerated Stalwart's Emblem (Hands)
+        PALADIN = {211994}, -- Entombed Seraph's Castigation
+        PRIEST = {212084}, -- Living Luster's Touch
+        SHAMAN = {212012}, -- Covenant of the Forgotten Reservoir
+    },
+    [225624] = { -- Venerated Conniver's Badge (Helm)
+        PALADIN = {211993}, -- Entombed Seraph's Casque
+        PRIEST = {212083}, -- Living Luster's Semblance
+        SHAMAN = {212011}, -- Noetic of the Forgotten Reservoir
+    },
+    [225628] = { -- Venerated Slayer's Icon (Legs)
+        PALADIN = {211992}, -- Entombed Seraph's Greaves
+        PRIEST = {212082}, -- Living Luster's Trousers
+        SHAMAN = {212010}, -- Sarong of the Forgotten Reservoir
+    },
+    [225632] = { -- Venerated Obscenity's Idol (Shoulders)
+        PALADIN = {211991}, -- Entombed Seraph's Plumes
+        PRIEST = {212081}, -- Living Luster's Dominion
+        SHAMAN = {212009}, -- Concourse of the Forgotten Reservoir
+    },
+
+    -- Zenith (Evoker, Monk, Rogue, Warrior)
+    [225617] = { -- Zenith Blasphemer's Effigy (Chest)
+        EVOKER = {212032}, -- Scales of the Destroyer
+        MONK = {212050}, -- Gatecrasher's Gi
+        ROGUE = {212041}, -- K'areshi Phantom's Nexus Wraps
+        WARRIOR = {211987}, -- Warsculptor's Furred Plastron
+    },
+    [225621] = { -- Zenith Stalwart's Emblem (Hands)
+        EVOKER = {212030}, -- Rippers of the Destroyer
+        MONK = {212048}, -- Gatecrasher's Protectors
+        ROGUE = {212039}, -- K'areshi Phantom's Grips
+        WARRIOR = {211985}, -- Warsculptor's Crushers
+    },
+    [225625] = { -- Zenith Conniver's Badge (Helm)
+        EVOKER = {212029}, -- Horns of the Destroyer
+        MONK = {212047}, -- Gatecrasher's Horns
+        ROGUE = {212038}, -- K'areshi Phantom's Emptiness
+        WARRIOR = {211984}, -- Warsculptor's Barbute
+    },
+    [225629] = { -- Zenith Slayer's Icon (Legs)
+        EVOKER = {212028}, -- Legguards of the Destroyer
+        MONK = {212046}, -- Gatecrasher's Kilt
+        ROGUE = {212037}, -- K'areshi Phantom's Leggings
+        WARRIOR = {211983}, -- Warsculptor's Cuisses
+    },
+    [225633] = { -- Zenith Obscenity's Idol (Shoulders)
+        EVOKER = {212027}, -- Fumaroles of the Destroyer
+        MONK = {212045}, -- Gatecrasher's Enduring Effigy
+        ROGUE = {212036}, -- K'areshi Phantom's Shoulderpads
+        WARRIOR = {211982}, -- Warsculptor's Horned Spaulders
     },
 })
 
