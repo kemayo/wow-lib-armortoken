@@ -3201,6 +3201,7 @@ ITEMDATA = {
     -- 10.1.7 Dreambound
     -- 10.2.0 Amirdrassil: below
     -- 11.0.0 Adventurer's Warbound (Delve rewards)
+    -- 11.1.0 Liberation of Undermine: below
 }
 
 -- Common case is everything from a given set having a shared set of link modifiers that represent the difficulty variants
@@ -3799,6 +3800,127 @@ addItemsWithVariants({
         MONK = {212045}, -- Gatecrasher's Enduring Effigy
         ROGUE = {212036}, -- K'areshi Phantom's Shoulderpads
         WARRIOR = {211982}, -- Warsculptor's Horned Spaulders
+    },
+})
+
+-- 11.1.0 Liberation of Undermine
+addItemsWithVariants({
+    {instanceDifficultyID=Enum.ItemCreationContext.RaidFinder, bonusIDs={3524}},
+    {instanceDifficultyID=Enum.ItemCreationContext.RaidNormal, bonusIDs={3524}},
+    {instanceDifficultyID=Enum.ItemCreationContext.RaidHeroic, bonusIDs={3524}},
+    {instanceDifficultyID=Enum.ItemCreationContext.RaidMythic, bonusIDs={3524}},
+}, {
+    -- Dreadful (Death Knight, Demon Hunter, Warlock)
+    [228799] = { -- Dreadful Greased Gallybux (Chest)
+        DEATHKNIGHT = {229256}, -- Cauldron Champion's Ribcage
+        DEMONHUNTER = {229319}, -- Fel-Dealer's Soul Engine
+        WARLOCK = {229328}, -- Spliced Fiendtrader's Surgical Gown
+    },
+    [228803] = { -- Dreadful Bloody Gallybux (Hands)
+        DEATHKNIGHT = {229254}, -- Cauldron Champion's Fistguards
+        DEMONHUNTER = {229317}, -- Fel-Dealer's Underhandlers
+        WARLOCK = {229326}, -- Spliced Fiendtrader's Demonic Grasp
+    },
+    [228807] = { -- Dreadful Gilded Gallybux (Helm)
+        DEATHKNIGHT = {229253}, -- Cauldron Champion's Crown
+        DEMONHUNTER = {229316}, -- Fel-Dealer's Visor
+        WARLOCK = {229325}, -- Spliced Fiendtrader's Transcendence
+    },
+    [228811] = { -- Dreadful Rusty Gallybux (Legs)
+        DEATHKNIGHT = {229252}, -- Cauldron Champion's Tattered Cuisses
+        DEMONHUNTER = {229315}, -- Fel-Dealer's Fur Kilt
+        WARLOCK = {229324}, -- Spliced Fiendtrader's Skin Tights
+    },
+    [228815] = { -- Dreadful Polished Gallybux (Shoulders)
+        DEATHKNIGHT = {229251}, -- Cauldron Champion's Screamplate
+        DEMONHUNTER = {229314}, -- Fel-Dealer's Recycled Reavers
+        WARLOCK = {229323}, -- Spliced Fiendtrader's Loyal Servants
+    },
+
+    -- Mystic (Druid, Hunter, Mage)
+    [228800] = { -- Mystic Greased Gallybux (Chest)
+        DRUID = {229310}, -- Robes of Reclaiming Blight
+        HUNTER = {229274}, -- Tireless Collector's Battlegear
+        MAGE = {229346}, -- Aspectral Emissary's Primal Robes
+    },
+    [228804] = { -- Mystic Bloody Gallybux (Hands)
+        DRUID = {229308}, -- Grips of Reclaiming Blight
+        HUNTER = {229272}, -- Tireless Collector's Gauntlets
+        MAGE = {229344}, -- Aspectral Emissary's Hardened Grasp
+    },
+    [228808] = { -- Mystic Gilded Gallybux (Helm)
+        DRUID = {229307}, -- Branches of Reclaiming Blight
+        HUNTER = {229271}, -- Tireless Collector's Chained Cowl
+        MAGE = {229343}, -- Aspectral Emissary's Crystalline Cowl
+    },
+    [228812] = { -- Mystic Rusty Gallybux (Legs)
+        DRUID = {229306}, -- Breeches of Reclaiming Blight
+        HUNTER = {229270}, -- Tireless Collector's Armored Breeches
+        MAGE = {229342}, -- Aspectral Emissary's Trousers
+    },
+    [228816] = { -- Mystic Polished Gallybux (Shoulders)
+        DRUID = {229305}, -- Jaws of Reclaiming Blight
+        HUNTER = {229269}, -- Tireless Collector's Hunted Heads
+        MAGE = {229341}, -- Aspectral Emissary's Arcane Vents
+    },
+
+    -- Venerated (Paladin, Priest, Shaman)
+    [228801] = { -- Venerated Greased Gallybux (Chest)
+        PALADIN = {229247}, -- Aureate Sentry's Encasement
+        PRIEST = {229337}, -- Confessor's Unshakable Vestment
+        SHAMAN = {229265}, -- Gale Sovereign's Clouded Hauberk
+    },
+    [228805] = { -- Venerated Bloody Gallybux (Hands)
+        PALADIN = {229245}, -- Aureate Sentry's Gauntlets
+        PRIEST = {229335}, -- Confessor's Unshakable Mitts
+        SHAMAN = {229263}, -- Gale Sovereign's Grasps
+    },
+    [228809] = { -- Venerated Gilded Gallybux (Helm)
+        PALADIN = {229244}, -- Aureate Sentry's Pledge
+        PRIEST = {229334}, -- Confessor's Unshakable Halo
+        SHAMAN = {229262}, -- Gale Sovereign's Charged Hood
+    },
+    [228813] = { -- Venerated Rusty Gallybux (Legs)
+        PALADIN = {229243}, -- Aureate Sentry's Legguards
+        PRIEST = {229333}, -- Confessor's Unshakable Leggings
+        SHAMAN = {229261}, -- Gale Sovereign's Pantaloons
+    },
+    [228817] = { -- Venerated Polished Gallybux (Shoulders)
+        PALADIN = {229242}, -- Aureate Sentry's Roaring Will
+        PRIEST = {229332}, -- Confessor's Unshakable Radiance
+        SHAMAN = {229260}, -- Gale Sovereign's Zephyrs
+    },
+
+    -- Zenith (Evoker, Monk, Rogue, Warrior)
+    [228802] = { -- Zenith Greased Gallybux (Chest)
+        EVOKER = {229283}, -- Opulent Treasurescale's Tunic
+        MONK = {229301}, -- Ageless Serpent's Inked Coils
+        ROGUE = {229292}, -- Spectral Gambler's Vest
+        WARRIOR = {229238}, -- Enforcer's Backalley Vestplate
+    },
+    [228806] = { -- Zenith Bloody Gallybux (Hands)
+        EVOKER = {229281}, -- Opulent Treasurescale's Gold-Counters
+        MONK = {229299}, -- Ageless Serpent's Handguards
+        ROGUE = {229290}, -- Spectral Gambler's Gloves
+        WARRIOR = {229236}, -- Enforcer's Backalley Crushers
+    },
+    [228810] = { -- Zenith Gilded Gallybux (Helm)
+        EVOKER = {229280}, -- Opulent Treasurescale's Crowned Jewel
+        MONK = {229298}, -- Ageless Serpent's Mane
+        ROGUE = {229289}, -- Spectral Gambler's Damned Visage
+        WARRIOR = {229235}, -- Enforcer's Backalley Faceshield
+    },
+    [228814] = { -- Zenith Rusty Gallybux (Legs)
+        EVOKER = {229279}, -- Opulent Treasurescale's Petticoat
+        MONK = {229297}, -- Ageless Serpent's Leggings
+        ROGUE = {229288}, -- Spectral Gambler's Pantaloons
+        WARRIOR = {229234}, -- Enforcer's Backalley Chausses
+    },
+    [228818] = { -- Zenith Polished Gallybux (Shoulders)
+        EVOKER = {229278}, -- Opulent Treasurescale's Gleaming Mantle
+        MONK = {229296}, -- Ageless Serpent's Shoulderpads
+        ROGUE = {229287}, -- Spectral Gambler's Bladed Mantle
+        WARRIOR = {229233}, -- Enforcer's Backalley Shoulderplates
     },
 })
 
