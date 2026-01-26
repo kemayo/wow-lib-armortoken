@@ -3202,6 +3202,7 @@ ITEMDATA = {
     -- 10.2.0 Amirdrassil: below
     -- 11.0.0 Adventurer's Warbound (Delve rewards)
     -- 11.1.0 Liberation of Undermine: below
+    -- 11.2.0 Manaforge Omega: below
 }
 
 -- Common case is everything from a given set having a shared set of link modifiers that represent the difficulty variants
@@ -3921,6 +3922,126 @@ addItemsWithVariants({
         MONK = {229296}, -- Ageless Serpent's Shoulderpads
         ROGUE = {229287}, -- Spectral Gambler's Bladed Mantle
         WARRIOR = {229233}, -- Enforcer's Backalley Shoulderplates
+    },
+})
+
+addItemsWithVariants({
+    {instanceDifficultyID=Enum.ItemCreationContext.RaidFinder, bonusIDs={3524}},
+    {instanceDifficultyID=Enum.ItemCreationContext.RaidNormal, bonusIDs={3524}},
+    {instanceDifficultyID=Enum.ItemCreationContext.RaidHeroic, bonusIDs={3524}},
+    {instanceDifficultyID=Enum.ItemCreationContext.RaidMythic, bonusIDs={3524}},
+}, {
+    -- Dreadful (Death Knight, Demon Hunter, Warlock)
+    [237581] = { -- Dreadful Voidglass Contaminant (Chest)
+        DEATHKNIGHT = {237631}, -- Hollow Sentinel's Breastplate
+        DEMONHUNTER = {237694}, -- Charhound's Vicious Bindings
+        WARLOCK = {237703}, -- Inquisitor's Robes of Madness
+    },
+    [237585] = { -- Dreadful Binding Agent (Hands)
+        DEATHKNIGHT = {237629}, -- Hollow Sentinel's Gauntlets
+        DEMONHUNTER = {237692}, -- Charhound's Vicious Felclaws
+        WARLOCK = {237701}, -- Inquisitor's Clutches of Madness
+    },
+    [237589] = { -- Dreadful Foreboding Beaker (Head)
+        DEATHKNIGHT = {237628}, -- Hollow Sentinel's Stonemask
+        DEMONHUNTER = {237691}, -- Charhound's Vicious Scalp
+        WARLOCK = {237700}, -- Inquisitor's Portal to Madness
+    },
+    [237593] = { -- Dreadful Silken Offering (Legs)
+        DEATHKNIGHT = {237627}, -- Hollow Sentinel's Stonekilt
+        DEMONHUNTER = {237690}, -- Charhound's Vicious Hidecoat
+        WARLOCK = {237699}, -- Inquisitor's Leggings of Madness
+    },
+    [237597] = { -- Dreadful Yearning Cursemark (Shoulders)
+        DEATHKNIGHT = {237626}, -- Hollow Sentinel's Perches
+        DEMONHUNTER = {237689}, -- Charhound's Vicious Hornguards
+        WARLOCK = {237698}, -- Inquisitor's Gaze of Madness
+    },
+
+    -- Mystic (Druid, Hunter, Mage)
+    [237582] = { -- Mystic Voidglass Contaminant (Chest)
+        DRUID = {237685}, -- Vest of the Mother Eagle
+        HUNTER = {237649}, -- Midnight Herald's Hauberk
+        MAGE = {237721}, -- Augur's Ephemeral Habiliments
+    },
+    [237586] = { -- Mystic Binding Agent (Hands)
+        DRUID = {237683}, -- Wings of the Mother Eagle
+        HUNTER = {237647}, -- Midnight Herald's Gloves
+        MAGE = {237719}, -- Augur's Ephemeral Mitts
+    },
+    [237590] = { -- Mystic Foreboding Beaker (Head)
+        DRUID = {237682}, -- Skymane of the Mother Eagle
+        HUNTER = {237646}, -- Midnight Herald's Cowl
+        MAGE = {237718}, -- Augur's Ephemeral Wide-Brim
+    },
+    [237594] = { -- Mystic Silken Offering (Legs)
+        DRUID = {237681}, -- Breeches of the Mother Eagle
+        HUNTER = {237645}, -- Midnight Herald's Petticoat
+        MAGE = {237717}, -- Augur's Ephemeral Trousers
+    },
+    [237598] = { -- Mystic Yearning Cursemark (Shoulders)
+        DRUID = {237680}, -- Ritual Pauldrons of the Mother Eagle
+        HUNTER = {237644}, -- Midnight Herald's Shadowguards
+        MAGE = {237716}, -- Augur's Ephemeral Orbs of Power
+    },
+
+    -- Venerated (Paladin, Priest, Shaman)
+    [237583] = { -- Venerated Voidglass Contaminant (Chest)
+        PALADIN = {237622}, -- Cuirass of the Lucent Battalion
+        PRIEST = {237712}, -- Dying Star's Cassock
+        SHAMAN = {237640}, -- Furs of Channeled Fury
+    },
+    [237587] = { -- Venerated Binding Agent (Hands)
+        PALADIN = {237620}, -- Protectors of the Lucent Battalion
+        PRIEST = {237710}, -- Dying Star's Caress
+        SHAMAN = {237638}, -- Claws of Channeled Fury
+    },
+    [237591] = { -- Venerated Foreboding Beaker (Head)
+        PALADIN = {237619}, -- Lightmane of the Lucent Battalion
+        PRIEST = {237709}, -- Dying Star's Veil
+        SHAMAN = {237637}, -- Aspect of Channeled Fury
+    },
+    [237595] = { -- Venerated Silken Offering (Legs)
+        PALADIN = {237618}, -- Cuisses of the Lucent Battalion
+        PRIEST = {237708}, -- Dying Star's Leggings
+        SHAMAN = {237636}, -- Tassets of Channeled Fury
+    },
+    [237599] = { -- Venerated Yearning Cursemark (Shoulders)
+        PALADIN = {237617}, -- Chargers of the Lucent Battalion
+        PRIEST = {237707}, -- Dying Star's Pyrelights
+        SHAMAN = {237635}, -- Fangs of Channeled Fury
+    },
+
+    -- Zenith (Evoker, Monk, Rogue, Warrior)
+    [237584] = { -- Zenith Voidglass Contaminant (Chest)
+        EVOKER = {237658}, -- Spellweaver's Immaculate Crestward
+        MONK = {237676}, -- Gi of Fallen Storms
+        ROGUE = {237667}, -- Tactical Vest of the Sudden Eclipse
+        WARRIOR = {237613}, -- Living Weapon's Bulwark
+    },
+    [237588] = { -- Zenith Binding Agent (Hands)
+        EVOKER = {237656}, -- Spellweaver's Immaculate Scaleguards
+        MONK = {237674}, -- Grasp of Fallen Storms
+        ROGUE = {237665}, -- Deathgrips of the Sudden Eclipse
+        WARRIOR = {237611}, -- Living Weapon's Crushers
+    },
+    [237592] = { -- Zenith Foreboding Beaker (Head)
+        EVOKER = {237655}, -- Spellweaver's Immaculate Focus
+        MONK = {237673}, -- Half-Mask of Fallen Storms
+        ROGUE = {237664}, -- Hood of the Sudden Eclipse
+        WARRIOR = {237610}, -- Living Weapon's Faceshield
+    },
+    [237596] = { -- Zenith Silken Offering (Legs)
+        EVOKER = {237654}, -- Spellweaver's Immaculate Runeslacks
+        MONK = {237672}, -- Legwraps of Fallen Storms
+        ROGUE = {237663}, -- Pants of the Sudden Eclipse
+        WARRIOR = {237609}, -- Living Weapon's Legguards
+    },
+    [237600] = { -- Zenith Yearning Cursemark (Shoulders)
+        EVOKER = {237653}, -- Spellweaver's Immaculate Pauldrons
+        MONK = {237671}, -- Glyphs of Fallen Storms
+        ROGUE = {237662}, -- Smokemantle of the Sudden Eclipse
+        WARRIOR = {237608}, -- Living Weapon's Ramparts
     },
 })
 
