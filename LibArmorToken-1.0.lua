@@ -3199,8 +3199,141 @@ ITEMDATA = {
     -- 10.0 Vault of the Incarnates: below
     -- 10.1.0 Aberrus: below
     -- 10.1.7 Dreambound
+    [208911] = { -- Dreambound Cloth Belt
+        CLOTH = {209406}, -- Cord
+    },
+    [208917] = { -- Dreambound Cloth Boots
+        CLOTH = {209410}, -- Sandals
+    },
+    [208908] = { -- Dreambound Cloth Bracers
+        CLOTH = {209405}, -- Cuffs
+    },
+    [208895] = { -- Dreambound Cloth Chestpiece
+        CLOTH = {209411}, -- Vestment
+    },
+    [208918] = { -- Dreambound Cloth Gloves
+        CLOTH = {209409}, -- Mitts
+    },
+    [208891] = { -- Dreambound Cloth Helm
+        CLOTH = {209408}, -- Crown
+    },
+    [208900] = { -- Dreambound Cloth Leggings
+        CLOTH = {209407}, -- Pants
+    },
+    [208903] = { -- Dreambound Cloth Spaulders
+        CLOTH = {209380}, -- Shoulderpads
+    },
+    [208913] = { -- Dreambound Leather Belt
+        LEATHER = {209400}, -- Sash
+    },
+    [208914] = { -- Dreambound Leather Boots
+        LEATHER = {209404}, -- Waders
+    },
+    [208906] = { -- Dreambound Leather Bracers
+        LEATHER = {209399}, -- Bindings
+    },
+    [208897] = { -- Dreambound Leather Chestpiece
+        LEATHER = {209382}, -- Vest
+    },
+    [208921] = { -- Dreambound Leather Gloves
+        LEATHER = {209403}, -- Handwraps
+    },
+    [208893] = { -- Dreambound Leather Helm
+        LEATHER = {209402}, -- Cowl
+    },
+    [208898] = { -- Dreambound Leather Leggings
+        LEATHER = {209401}, -- Breeches
+    },
+    [208905] = { -- Dreambound Leather Spaulders
+        LEATHER = {209381}, -- Epaulets
+    },
+    [208912] = { -- Dreambound Mail Belt
+        MAIL = {209392}, -- Cinch
+    },
+    [208915] = { -- Dreambound Mail Boots
+        MAIL = {209397}, -- Striders
+    },
+    [208907] = { -- Dreambound Mail Bracers
+        MAIL = {209391}, -- Vambraces
+    },
+    [208896] = { -- Dreambound Mail Chestpiece
+        MAIL = {209398}, -- Chainmail
+    },
+    [208920] = { -- Dreambound Mail Gloves
+        MAIL = {209396}, -- Grips
+    },
+    [208892] = { -- Dreambound Mail Helm
+        MAIL = {209395}, -- Coif
+    },
+    [208899] = { -- Dreambound Mail Leggings
+        MAIL = {209394}, -- Greaves
+    },
+    [208904] = { -- Dreambound Mail Spaulders
+        MAIL = {209393}, -- Shoulderguards
+    },
+    [208910] = { -- Dreambound Plate Belt
+        PLATE = {209384}, -- Girdle
+    },
+    [208916] = { -- Dreambound Plate Boots
+        PLATE = {209388}, -- Sabatons
+    },
+    [208909] = { -- Dreambound Plate Bracers
+        PLATE = {209383}, -- Armplates
+    },
+    [208894] = { -- Dreambound Plate Chestpiece
+        PLATE = {209389}, -- Breastplate
+    },
+    [208919] = { -- Dreambound Plate Gloves
+        PLATE = {209387}, -- Gauntlets
+    },
+    [208890] = { -- Dreambound Plate Helm
+        PLATE = {209390}, -- Faceplate
+    },
+    [208901] = { -- Dreambound Plate Leggings
+        PLATE = {209386}, -- Legguards
+    },
+    [208902] = { -- Dreambound Plate Spaulders
+        PLATE = {209385}, -- Mantle
+    },
+    [208922] = { -- Dreambound Cloak
+        ALL = {
+            --209414, -- Drape (WH comments suggest this can't generate?)
+            209412, -- Greatcloak
+            209413, -- Cape
+            209357, -- Shawl
+        },
+    },
+    [208923] = { -- Dreambound Ring
+        ALL = {
+            {209368}, -- Loop
+            {209367}, -- Signet
+            {209358}, -- Band
+        },
+    },
+    [208924] = { -- Dreambound Necklace
+        ALL = {209356}, -- Choker
+    },
+    -- [208925] = { -- Dreambound Trinket
+    --     ALL = {},
+    -- },
+    [208926] = { -- Dreambound Weapon
+        -- These are a bit spec-based as well, but...
+        PALADIN = {209378, 209366, 209363, 209364, 209371, 209374, 209361, 209379, 209369}, -- Scepter (int Off-hand), Hacker (str 1h Axe), Mallet (str 1h Mace), Censer (int 1h Mace), Sword (1h Sword), Spellblade (1h Sword), Halberd (str Polearm), Barrier (Shield), Greatsword (2h sword)
+        WARRIOR = {209366, 209363, 209371, 209361, 209379, 209369}, -- Hacker (str 1h Axe), Mallet (str 1h Mace), Sword (1h Sword), Halberd (str Polearm), Barrier (Shield), Greatsword (2h sword)
+        DEATHKNIGHT = {209378, 209366, 209363, 209371, 209361, 209369}, -- Scepter (int Off-hand), Hacker (str 1h Axe), Mallet (str 1h Mace), Sword (1h Sword), Halberd (str Polearm), Greatsword (2h sword)
+        DEMONHUNTER = {209365, 209370, 209374, 209359}, -- Cleaver (agi 1h Axe), Blade (1h Sword), Spellblade (1h Sword), Warglaive
+        HUNTER = {209375, 209376}, -- Rifle (Gun), Polearm (agi Polearm)
+        ROGUE = {209373, 209365, 209362, 209370}, -- Shank (agi Dagger), Cleaver (agi 1h Axe), Cudgel (agi 1h Mace), Blade (1h Sword)
+        MONK = {209378, 209365, 209362, 209364, 209370, 209374, 209376, 209360}, -- Scepter (int Off-hand), Cleaver (agi 1h Axe), Cudgel (agi 1h Mace), Censer (int 1h Mace), Blade (1h Sword), Spellblade (1h Sword), Polearm (agi Polearm), Staff (int Staff)
+        MAGE = {209372, 209378, 209374, 209360, 209377}, -- Kris (int Dagger), Scepter (int Off-hand), Spellblade (1h Sword), Staff (int Staff), Wand (Wand)
+        DRUID = {209372, 209378, 209364, 209376, 209360}, -- Kris (int Dagger), Scepter (int Off-hand), Censer (int 1h Mace), Polearm (agi Polearm), Staff (int Staff)
+        PRIEST = {209372, 209378, 209364, 209360, 209377}, -- Kris (int Dagger), Scepter (int Off-hand), Censer (int 1h Mace), Staff (int Staff), Wand (Wand)
+        SHAMAN = {209372, 209378, 209365, 209362, 209364, 209379, 209360}, -- Kris (int Dagger), Scepter (int Off-hand), Cleaver (agi 1h Axe), Cudgel (agi 1h Mace), Censer (int 1h Mace), Barrier (Shield), Staff (int Staff)
+        WARLOCK = {209372, 209378, 209374, 209360, 209377}, -- Kris (int Dagger), Scepter (int Off-hand), Spellblade (1h Sword), Staff (int Staff), Wand (Wand)
+        EVOKER = {209372, 209378, 209364, 209374, 209360}, -- Kris (int Dagger), Scepter (int Off-hand), Censer (int 1h Mace), Spellblade (1h Sword), Staff (int Staff)
+    },
     -- 10.2.0 Amirdrassil: below
-    -- 11.0.0 Adventurer's Warbound (Delve rewards)
+    -- 11.0.0 Adventurer's Warbound (Delve rewards -- turned into non-token gray after Season 1)
     -- 11.1.0 Liberation of Undermine: below
     -- 11.2.0 Manaforge Omega: below
     -- 12.0 The Voidspire: below
