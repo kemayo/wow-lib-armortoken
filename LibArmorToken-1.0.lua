@@ -3203,6 +3203,7 @@ ITEMDATA = {
     -- 11.0.0 Adventurer's Warbound (Delve rewards)
     -- 11.1.0 Liberation of Undermine: below
     -- 11.2.0 Manaforge Omega: below
+    -- 12.0 The Voidspire: below
 }
 
 -- Common case is everything from a given set having a shared set of link modifiers that represent the difficulty variants
@@ -3925,6 +3926,7 @@ addItemsWithVariants({
     },
 })
 
+-- 12.0 The Voidspire
 addItemsWithVariants({
     {instanceDifficultyID=Enum.ItemCreationContext.RaidFinder, bonusIDs={3524}},
     {instanceDifficultyID=Enum.ItemCreationContext.RaidNormal, bonusIDs={3524}},
@@ -4042,6 +4044,105 @@ addItemsWithVariants({
         MONK = {237671}, -- Glyphs of Fallen Storms
         ROGUE = {237662}, -- Smokemantle of the Sudden Eclipse
         WARRIOR = {237608}, -- Living Weapon's Ramparts
+    },
+})
+
+addItemsWithVariants({
+    {instanceDifficultyID=Enum.ItemCreationContext.RaidFinder, bonusIDs={3524}},
+    {instanceDifficultyID=Enum.ItemCreationContext.RaidNormal, bonusIDs={3524}},
+    {instanceDifficultyID=Enum.ItemCreationContext.RaidHeroic, bonusIDs={3524}},
+    {instanceDifficultyID=Enum.ItemCreationContext.RaidMythic, bonusIDs={3524}},
+}, {
+    -- Voidforged (Warrior, Paladin, Death Knight)
+    [249354] = { -- Voidforged Hungering Nullcore (Hands)
+        WARRIOR = {249953}, -- Night Ender's Fists
+        PALADIN = {249962}, -- Luminant Verdict's Gauntlets
+        DEATHKNIGHT = {249971}, -- Relentless Rider's Bonegrasps
+    },
+    [249358] = { -- Voidforged Fanatical Nullcore (Head)
+        WARRIOR = {249952}, -- Night Ender's Tusks
+        PALADIN = {249961}, -- Luminant Verdict's Unwavering Gaze
+        DEATHKNIGHT = {249970}, -- Relentless Rider's Crown
+    },
+    [249362] = { -- Voidforged Corrupted Nullcore (Legs)
+        WARRIOR = {249951}, -- Night Ender's Chausses
+        PALADIN = {249960}, -- Luminant Verdict's Greaves
+        DEATHKNIGHT = {249969}, -- Relentless Rider's Legguards
+    },
+    [249366] = { -- Voidforged Unraveled Nullcore (Shoulders)
+        WARRIOR = {249950}, -- Night Ender's Pauldrons
+        PALADIN = {249959}, -- Luminant Verdict's Providence Watch
+        DEATHKNIGHT = {249968}, -- Relentless Rider's Dreadthorns
+    },
+
+    -- Voidcured (Rogue, Monk, Druid, Demon Hunter)
+    [249352] = { -- Voidcured Hungering Nullcore (Hands)
+        ROGUE = {250007}, -- Sleight of Hand of the Grim Jest
+        MONK = {250016}, -- Thunderfists of Ra-den's Chosen
+        DRUID = {250025}, -- Arbortenders of the Luminous Bloom
+        DEMONHUNTER = {250034}, -- Devouring Reaver's Essence Grips
+    },
+    [249356] = { -- Voidcured Fanatical Nullcore (Head)
+        ROGUE = {250006}, -- Masquerade of the Grim Jest
+        MONK = {250015}, -- Fearsome Visage of Ra-den's Chosen
+        DRUID = {250024}, -- Branches of the Luminous Bloom
+        DEMONHUNTER = {250033}, -- Devouring Reaver's Intake
+    },
+    [249360] = { -- Voidcured Corrupted Nullcore (Legs)
+        ROGUE = {250005}, -- Blade Holsters of the Grim Jest
+        MONK = {250014}, -- Swiftsweepers of Ra-den's Chosen
+        DRUID = {250023}, -- Phloemwraps of the Luminous Bloom
+        DEMONHUNTER = {250032}, -- Devouring Reaver's Pistons
+    },
+    [249364] = { -- Voidcured Unraveled Nullcore (Shoulders)
+        ROGUE = {250004}, -- Venom Casks of the Grim Jest
+        MONK = {250013}, -- Aurastones of Ra-den's Chosen
+        DRUID = {250022}, -- Seedpods of the Luminous Bloom
+        DEMONHUNTER = {250031}, -- Devouring Reaver's Exhaustplates
+    },
+
+    -- Voidcast (Hunter, Shaman, Evoker)
+    [249353] = { -- Voidcast Hungering Nullcore (Hands)
+        HUNTER = {249989}, -- Primal Sentry's Talonguards
+        SHAMAN = {249980}, -- Earthgrips of the Primal Core
+        EVOKER = {249998}, -- Enforcer's Grips of the Black Talon
+    },
+    [249357] = { -- Voidcast Fanatical Nullcore (Head)
+        HUNTER = {249988}, -- Primal Sentry's Maw
+        SHAMAN = {249979}, -- Locus of the Primal Core
+        EVOKER = {249997}, -- Hornhelm of the Black Talon
+    },
+    [249361] = { -- Voidcast Corrupted Nullcore (Legs)
+        HUNTER = {249987}, -- Primal Sentry's Legguards
+        SHAMAN = {249978}, -- Leggings of the Primal Core
+        EVOKER = {249996}, -- Greaves of the Black Talon
+    },
+    [249365] = { -- Voidcast Unraveled Nullcore (Shoulders)
+        HUNTER = {249986}, -- Primal Sentry's Trophies
+        SHAMAN = {249977}, -- Tempests of the Primal Core
+        EVOKER = {249995}, -- Beacons of the Black Talon
+    },
+
+    -- Voidwoven (Priest, Mage, Warlock)
+    [249351] = { -- Voidwoven Hungering Nullcore (Hands)
+        PRIEST = {250052}, -- Blind Oath's Touch
+        MAGE = {250061}, -- Voidbreaker's Gloves
+        WARLOCK = {250043}, -- Abyssal Immolator's Grasps
+    },
+    [249355] = { -- Voidwoven Fanatical Nullcore (Head)
+        PRIEST = {250051}, -- Blind Oath's Winged Crest
+        MAGE = {250060}, -- Voidbreaker's Veil
+        WARLOCK = {250042}, -- Abyssal Immolator's Smoldering Flames
+    },
+    [249359] = { -- Voidwoven Corrupted Nullcore (Legs)
+        PRIEST = {250050}, -- Blind Oath's Leggings
+        MAGE = {250059}, -- Voidbreaker's Britches
+        WARLOCK = {250041}, -- Abyssal Immolator's Pillars
+    },
+    [249363] = { -- Voidwoven Unraveled Nullcore (Shoulders)
+        PRIEST = {250049}, -- Blind Oath's Seraphguards
+        MAGE = {250058}, -- Voidbreaker's Leyline Nexi
+        WARLOCK = {250040}, -- Abyssal Immolator's Fury
     },
 })
 
