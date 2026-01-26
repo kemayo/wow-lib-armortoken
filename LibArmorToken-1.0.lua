@@ -3,8 +3,6 @@ if not lib then return end
 
 local ITEMDATA
 
-local empty = {}
-
 local armorTypes = {
     PLATE = {"PALADIN", "WARRIOR", "DEATHKNIGHT"},
     MAIL = {"SHAMAN", "HUNTER", "EVOKER"},
@@ -19,6 +17,62 @@ for armorType, classes in pairs(armorTypes) do
             classArmorType[class] = armorType
         end
     end
+end
+
+-- this mapping came from Blizzard_Reports.lua
+local fields = {
+   "itemID", "enchantID", "gemID1", "gemID2", "gemID3",
+   "gemID4", "suffixID", "uniqueID", "linkLevel", "specializationID",
+   "upgradeTypeID", "instanceDifficultyID", "numBonusIDs", -- [:bonusID1:bonusID2:...]
+   --[:upgradeValue1:upgradeValue2:...]:relic1NumBonusIDs[:relic1BonusID1:relic1BonusID2:...]:relic2NumBonusIDs[:relic2BonusID1:relic2BonusID2:...]:relic3NumBonusIDs[:relic3BonusID1:relic3BonusID2:...]
+}
+local function LinkOptions(link)
+    local linkType, linkOptions, displayText = LinkUtil.ExtractLink(link)
+    local splitOptions = {LinkUtil.SplitLinkOptions(linkOptions)}
+    local options = {}
+    for i, field in ipairs(fields) do
+        options[field] = tonumber(splitOptions[i])
+    end
+    local numBonusIDs = tonumber(options.numBonusIDs)
+    if numBonusIDs and numBonusIDs > 0 then
+        local b = {}
+        for i=1, numBonusIDs, 1 do
+            local bonusID = tonumber(splitOptions[#fields + i])
+            table.insert(b, bonusID)
+            options["bonusID"..i] = bonusID
+        end
+        options.bonusIDs = b
+    end
+    --TODO: support the rest of the fields if they ever become relevant
+    return options, linkType, displayText
+end
+local function IsVariantRelevant(linkOptions, variant)
+    -- variant is a linkoptions table
+    for field, value in pairs(variant) do
+        if field == "bonusIDs" then
+            for _, bonusID in ipairs(value) do
+                if not tContains(linkOptions.bonusIDs, bonusID) then
+                    return false
+                end
+            end
+        else
+            if linkOptions[field] ~= value then
+                return false
+            end
+        end
+    end
+    return true
+end
+local function RelevantVariants(itemLinkOrId, variants)
+    if not (variants and type(itemLinkOrId) == "string") then return end
+    local linkOptions = LinkOptions(itemLinkOrId)
+    local relevant = {}
+    for _, variant in ipairs(variants) do
+        if IsVariantRelevant(linkOptions, variant) then
+            table.insert(relevant, variant)
+        end
+    end
+    return #relevant > 0 and relevant or nil
 end
 
 -- API
@@ -47,87 +101,33 @@ end
 
 do
     local t = {}
-    function lib:IterateItemsForTokenAndClass(itemid, class)
-        if not (ITEMDATA[itemid] and (ITEMDATA[itemid][class] or ITEMDATA[itemid][classArmorType[class]])) then
-            return ipairs({})
-        end
+    function lib:IterateItemsForTokenAndClass(itemLinkOrId, class)
+        -- TODO: this doesn't support variants, and the API would need to change for it to do so.
+        -- Insofar as it's a wrapper for IterateItemsForToken with a parameter provided, combining
+        -- it with GetTokenVariants should be sufficient.
         wipe(t)
-        if ITEMDATA[itemid][class] then
-            -- class-specific
-            tAppendAll(t, ITEMDATA[itemid][class])
-        end
-        if ITEMDATA[itemid][classArmorType[class]] then
-            -- armor-type
-            tAppendAll(t, ITEMDATA[itemid][classArmorType[class]])
-        end
-        if ITEMDATA[itemid]["ALL"] then
-            -- anyone
-            tAppendAll(t, ITEMDATA[itemid]["ALL"])
+        for itemid in self:IterateItemsForToken(itemLinkOrId, class) do
+            table.insert(t, itemid)
         end
         return ipairs(t)
     end
 end
 
+function lib:GetTokenVariants(itemLinkOrId)
+    local itemid = C_Item.GetItemInfoInstant(itemLinkOrId)
+    if not (itemid and ITEMDATA[itemid] and ITEMDATA[itemid]._variants) then return end
+    local relevantVariants = RelevantVariants(itemLinkOrId, ITEMDATA[itemid]._variants)
+    if relevantVariants then
+        return relevantVariants
+    end
+    return {unpack(ITEMDATA[itemid]._variants)}
+end
+
 do
-    -- this mapping came from Blizzard_Reports.lua
-    local fields = {
-       "itemID", "enchantID", "gemID1", "gemID2", "gemID3",
-       "gemID4", "suffixID", "uniqueID", "linkLevel", "specializationID",
-       "upgradeTypeID", "instanceDifficultyID", "numBonusIDs", -- [:bonusID1:bonusID2:...]
-       --[:upgradeValue1:upgradeValue2:...]:relic1NumBonusIDs[:relic1BonusID1:relic1BonusID2:...]:relic2NumBonusIDs[:relic2BonusID1:relic2BonusID2:...]:relic3NumBonusIDs[:relic3BonusID1:relic3BonusID2:...]
-    }
-    local function LinkOptions(link)
-        local linkType, linkOptions, displayText = LinkUtil.ExtractLink(link)
-        local splitOptions = {LinkUtil.SplitLinkOptions(linkOptions)}
-        local options = {}
-        for i, field in ipairs(fields) do
-            options[field] = tonumber(splitOptions[i])
-        end
-        local numBonusIDs = tonumber(options.numBonusIDs)
-        if numBonusIDs and numBonusIDs > 0 then
-            local b = {}
-            for i=1, numBonusIDs, 1 do
-                local bonusID = tonumber(splitOptions[#fields + i])
-                table.insert(b, bonusID)
-                options["bonusID"..i] = bonusID
-            end
-            options.bonusIDs = b
-        end
-        --TODO: support the rest of the fields if they ever become relevant
-        return options, linkType, displayText
-    end
-    local function IsVariantRelevant(linkOptions, variant)
-        -- variant is a linkoptions table
-        for field, value in pairs(variant) do
-            if field == "bonusIDs" then
-                for _, bonusID in ipairs(value) do
-                    if not tContains(linkOptions.bonusIDs, bonusID) then
-                        return false
-                    end
-                end
-            else
-                if linkOptions[field] ~= value then
-                    return false
-                end
-            end
-        end
-        return true
-    end
-    local function RelevantVariants(itemLinkOrId, variants)
-        if not (variants and type(itemLinkOrId) == "string") then return end
-        local linkOptions = LinkOptions(itemLinkOrId)
-        local relevant = {}
-        for _, variant in ipairs(variants) do
-            if IsVariantRelevant(linkOptions, variant) then
-                table.insert(relevant, variant)
-            end
-        end
-        return #relevant > 0 and relevant or nil
-    end
-    local co = function(t, classOnly, itemLinkOrId)
-        local relevantVariants = RelevantVariants(itemLinkOrId, t._variants)
+    local co = function(tokenData, classOnly, itemLinkOrId)
+        local relevantVariants = RelevantVariants(itemLinkOrId, tokenData._variants)
         local playerClass = select(2, UnitClass("player"))
-        for class, citems in pairs(t) do
+        for class, citems in pairs(tokenData) do
             if (class ~= "_variants") and ((not classOnly) or (class == classOnly) or (class == "ALL") or (class == classArmorType[classOnly])) then
                 for _, ci in ipairs(citems) do
                     -- relevant means "is specific to the player's class OR is non-class-specific and of the player's armor-type"
@@ -135,8 +135,8 @@ do
                     if not relevant and armorTypes[class] then
                         relevant = class == classArmorType[playerClass]
                     end
-                    if t._variants and not relevantVariants then
-                        coroutine.yield(ci, class, relevant, {unpack(t._variants)})
+                    if tokenData._variants and not relevantVariants then
+                        coroutine.yield(ci, class, relevant, {unpack(tokenData._variants)})
                     else
                         coroutine.yield(ci, class, relevant, relevantVariants)
                     end
@@ -144,11 +144,10 @@ do
             end
         end
     end
-    -- iterates over `itemid, restriction, relevant[, bonusid OR bonusids]`
-    -- `restriction` will be either CLASSNAME or ARMORTYPE
+    -- iterates over `itemid, restriction, relevant[, variants]`
+    -- `restriction` will be either CLASSNAME, ARMORTYPE, or "ALL"
     -- `relevant` means it's either the armortype for the current player-class, or class-specific to the current player-class
-    -- `bonusid` will be the link-specific bonus, if this was called with a link that maps to a relevant bonus
-    -- `bonusids` will be a table of all possible bonuses otherwise
+    -- `variants` will be nil or a table; if an itemLink was provided for the token, the table will be filtered to only variants that apply to the link
     function lib:IterateItemsForToken(itemLinkOrId, classOnly)
         local itemid = C_Item.GetItemInfoInstant(itemLinkOrId)
         if not ITEMDATA[itemid] then
@@ -156,25 +155,22 @@ do
         end
         return coroutine.wrap(function() return co(ITEMDATA[itemid], classOnly, itemLinkOrId) end)
     end
+end
 
-    function lib:GetTokenVariants(itemid)
-        return unpack((ITEMDATA[itemid] or empty)._variants or empty)
+-- Helper function for the above, if you get a variant from it and need to e.g. check transmog.
+-- Its goal is to make just enough of a link for it to be valid input to core Blizzard functions
+function lib:GetBareLinkForItem(itemid, variant, itemName)
+    if not variant then return (string.format("|Hitem:%d|h[%s]|h", itemid, itemName or itemid)) end
+    local linkFields = {itemID=itemid, numBonusIDs=variant.numBonusIDs or (variant.bonusIDs and #variant.bonusIDs or 0)}
+    MergeTable(linkFields, variant)
+    local link = {}
+    for i, field in ipairs(fields) do
+        table.insert(link, linkFields[field] or "")
     end
-
-    -- Helper function for the above, if you get a variant from it and need to e.g. check transmog
-    function lib:GetBareLinkForItem(itemid, variant)
-        if not variant then return (string.format("|Hitem:%d|h[%d]|h", itemid, itemid)) end
-        local linkFields = {itemID=itemid, numBonusIDs=variant.numBonusIDs or (variant.bonusIDs and #variant.bonusIDs or 0)}
-        MergeTable(linkFields, variant)
-        local link = {}
-        for i, field in ipairs(fields) do
-            table.insert(link, linkFields[field] or "")
-        end
-        if variant.bonusIDs then
-            tAppendAll(link, variant.bonusIDs)
-        end
-        return (string.format("|Hitem:%s|h[%d]|h", table.concat(link, ":"), itemid))
+    if variant.bonusIDs then
+        tAppendAll(link, variant.bonusIDs)
     end
+    return (string.format("|Hitem:%s|h[%s]|h", table.concat(link, ":"), itemName or itemid))
 end
 
 -- DATA
@@ -3349,7 +3345,7 @@ local function addItemsWithVariants(variants, items)
 end
 local function addItemsWithBonuses(bonuses, items)
     for i, bonusID in ipairs(bonuses) do
-        bonuses[i] = {bonusIDs={bonuses[i]}}
+        bonuses[i] = {bonusIDs={bonusID}}
     end
     return addItemsWithVariants(bonuses, items)
 end
